@@ -1,4 +1,4 @@
 User-agent: *
 Crawl-delay: 120
-Sitemap: https://notes.cerallin.top/sitemap.xml
-Sitemap: https://notes.cerallin.top/atom.xml
+Sitemap: https://cerallin.github.io/notes/sitemap.xml
+Sitemap: https://cerallin.github.io/notes/atom.xml
