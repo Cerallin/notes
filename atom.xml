@@ -299,11 +299,11 @@
     <category term="计算机与通信工程" scheme="https://cerallin.github.io/notes/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/"/>
     
     
-    <category term="C" scheme="https://cerallin.github.io/notes/tags/C/"/>
-    
     <category term="Linux" scheme="https://cerallin.github.io/notes/tags/Linux/"/>
     
     <category term="CentOS" scheme="https://cerallin.github.io/notes/tags/CentOS/"/>
+    
+    <category term="C" scheme="https://cerallin.github.io/notes/tags/C/"/>
     
   </entry>
   
@@ -483,11 +483,11 @@
     <category term="计算机与通信工程" scheme="https://cerallin.github.io/notes/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/"/>
     
     
+    <category term="LaTeX" scheme="https://cerallin.github.io/notes/tags/LaTeX/"/>
+    
     <category term="Python" scheme="https://cerallin.github.io/notes/tags/Python/"/>
     
     <category term="机器学习" scheme="https://cerallin.github.io/notes/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="LaTeX" scheme="https://cerallin.github.io/notes/tags/LaTeX/"/>
     
   </entry>
   

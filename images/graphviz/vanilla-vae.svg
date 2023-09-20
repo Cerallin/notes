@@ -9,20 +9,15 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
 <title>vanillaVAE</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-328 612,-328 612,4 -4,4"/>
-<g id="clust7" class="cluster">
-<title>cluster_z</title>
-<polygon fill="none" stroke="#ffffff" points="291,-131 291,-251 379,-251 379,-131 291,-131"/>
-<text text-anchor="middle" x="335" y="-234.4" font-family="Times,serif" font-size="14.00" fill="#000000">Latent Space</text>
+<g id="clust1" class="cluster">
+<title>cluster_input</title>
+<polygon fill="none" stroke="#ffffff" points="0,-127 0,-204 81,-204 81,-127 0,-127"/>
+<text text-anchor="middle" x="40.5" y="-187.4" font-family="Times,serif" font-size="14.00" fill="#000000">Input Layer</text>
 </g>
 <g id="clust8" class="cluster">
 <title>cluster_output_hidden</title>
 <polygon fill="none" stroke="#ffffff" points="399,-34 399,-316 497,-316 497,-34 399,-34"/>
 <text text-anchor="middle" x="448" y="-299.4" font-family="Times,serif" font-size="14.00" fill="#000000">Hidden Layers</text>
-</g>
-<g id="clust1" class="cluster">
-<title>cluster_input</title>
-<polygon fill="none" stroke="#ffffff" points="0,-127 0,-204 81,-204 81,-127 0,-127"/>
-<text text-anchor="middle" x="40.5" y="-187.4" font-family="Times,serif" font-size="14.00" fill="#000000">Input Layer</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_input_hidden</title>
@@ -34,15 +29,20 @@
 <polygon fill="none" stroke="#ffffff" points="219,-153 219,-273 271,-273 271,-153 219,-153"/>
 <text text-anchor="middle" x="245" y="-256.4" font-family="Times,serif" font-size="14.00" fill="#000000">mu</text>
 </g>
-<g id="clust11" class="cluster">
-<title>cluster_output</title>
-<polygon fill="none" stroke="#ffffff" points="517,-153 517,-230 608,-230 608,-153 517,-153"/>
-<text text-anchor="middle" x="562.5" y="-213.4" font-family="Times,serif" font-size="14.00" fill="#000000">Output Layer</text>
-</g>
 <g id="clust6" class="cluster">
 <title>cluster_logvar</title>
 <polygon fill="none" stroke="#ffffff" points="219,-25 219,-145 271,-145 271,-25 219,-25"/>
 <text text-anchor="middle" x="245" y="-128.4" font-family="Times,serif" font-size="14.00" fill="#000000">logvar</text>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_z</title>
+<polygon fill="none" stroke="#ffffff" points="291,-131 291,-251 379,-251 379,-131 291,-131"/>
+<text text-anchor="middle" x="335" y="-234.4" font-family="Times,serif" font-size="14.00" fill="#000000">Latent Space</text>
+</g>
+<g id="clust11" class="cluster">
+<title>cluster_output</title>
+<polygon fill="none" stroke="#ffffff" points="517,-153 517,-230 608,-230 608,-153 517,-153"/>
+<text text-anchor="middle" x="562.5" y="-213.4" font-family="Times,serif" font-size="14.00" fill="#000000">Output Layer</text>
 </g>
 <!-- in -->
 <g id="node1" class="node">
@@ -318,35 +318,35 @@
 <!-- h23 -->
 <g id="node18" class="node">
 <title>h23</title>
-<ellipse fill="none" stroke="#0000ff" cx="448" cy="-60" rx="18" ry="18"/>
+<ellipse fill="none" stroke="#0000ff" cx="448" cy="-265" rx="18" ry="18"/>
 </g>
 <!-- z1&#45;&gt;h23 -->
 <g id="edge32" class="edge">
 <title>z1&#45;&gt;h23</title>
-<path fill="none" stroke="#000000" d="M346.4569,-185.8056C367.0998,-160.2303 410.5067,-106.4519 433.304,-78.2075"/>
-<polygon fill="#000000" stroke="#000000" points="434.7341,-79.2219 436.5128,-74.232 432.0106,-77.0236 434.7341,-79.2219"/>
+<path fill="none" stroke="#000000" d="M350.7122,-209.038C370.7543,-220.5666 405.4583,-240.5291 427.5452,-253.234"/>
+<polygon fill="#000000" stroke="#000000" points="426.8503,-254.8531 432.057,-255.8292 428.5955,-251.8192 426.8503,-254.8531"/>
 </g>
 <!-- h24 -->
 <g id="node22" class="node">
 <title>h24</title>
-<ellipse fill="none" stroke="#0000ff" cx="448" cy="-265" rx="18" ry="18"/>
+<ellipse fill="none" stroke="#0000ff" cx="448" cy="-103" rx="18" ry="18"/>
 </g>
 <!-- z1&#45;&gt;h24 -->
 <g id="edge33" class="edge">
 <title>z1&#45;&gt;h24</title>
-<path fill="none" stroke="#000000" d="M350.7122,-209.038C370.7543,-220.5666 405.4583,-240.5291 427.5452,-253.234"/>
-<polygon fill="#000000" stroke="#000000" points="426.8503,-254.8531 432.057,-255.8292 428.5955,-251.8192 426.8503,-254.8531"/>
+<path fill="none" stroke="#000000" d="M348.856,-188.1059C369.273,-170.5798 407.4519,-137.8067 430.0085,-118.4441"/>
+<polygon fill="#000000" stroke="#000000" points="431.3766,-119.576 434.0306,-114.9914 429.0968,-116.9203 431.3766,-119.576"/>
 </g>
 <!-- h25 -->
 <g id="node23" class="node">
 <title>h25</title>
-<ellipse fill="none" stroke="#0000ff" cx="448" cy="-103" rx="18" ry="18"/>
+<ellipse fill="none" stroke="#0000ff" cx="448" cy="-60" rx="18" ry="18"/>
 </g>
 <!-- z1&#45;&gt;h25 -->
 <g id="edge34" class="edge">
 <title>z1&#45;&gt;h25</title>
-<path fill="none" stroke="#000000" d="M348.856,-188.1059C369.273,-170.5798 407.4519,-137.8067 430.0085,-118.4441"/>
-<polygon fill="#000000" stroke="#000000" points="431.3766,-119.576 434.0306,-114.9914 429.0968,-116.9203 431.3766,-119.576"/>
+<path fill="none" stroke="#000000" d="M346.4569,-185.8056C367.0998,-160.2303 410.5067,-106.4519 433.304,-78.2075"/>
+<polygon fill="#000000" stroke="#000000" points="434.7341,-79.2219 436.5128,-74.232 432.0106,-77.0236 434.7341,-79.2219"/>
 </g>
 <!-- z2&#45;&gt;h21 -->
 <g id="edge35" class="edge">
@@ -363,20 +363,20 @@
 <!-- z2&#45;&gt;h23 -->
 <g id="edge37" class="edge">
 <title>z2&#45;&gt;h23</title>
-<path fill="none" stroke="#000000" d="M348.856,-145.1059C369.273,-127.5798 407.4519,-94.8067 430.0085,-75.4441"/>
-<polygon fill="#000000" stroke="#000000" points="431.3766,-76.576 434.0306,-71.9914 429.0968,-73.9203 431.3766,-76.576"/>
+<path fill="none" stroke="#000000" d="M348.4063,-169.8131C369.0754,-189.5676 408.6878,-227.4273 431.2266,-248.9688"/>
+<polygon fill="#000000" stroke="#000000" points="430.1361,-250.3473 434.9599,-252.5369 432.5544,-247.8171 430.1361,-250.3473"/>
 </g>
 <!-- z2&#45;&gt;h24 -->
 <g id="edge38" class="edge">
 <title>z2&#45;&gt;h24</title>
-<path fill="none" stroke="#000000" d="M348.4063,-169.8131C369.0754,-189.5676 408.6878,-227.4273 431.2266,-248.9688"/>
-<polygon fill="#000000" stroke="#000000" points="430.1361,-250.3473 434.9599,-252.5369 432.5544,-247.8171 430.1361,-250.3473"/>
+<path fill="none" stroke="#000000" d="M351.6735,-149.0321C371.65,-139.4858 405.1412,-123.4812 426.9007,-113.0829"/>
+<polygon fill="#000000" stroke="#000000" points="427.8687,-114.5599 431.6254,-110.825 426.3595,-111.402 427.8687,-114.5599"/>
 </g>
 <!-- z2&#45;&gt;h25 -->
 <g id="edge39" class="edge">
 <title>z2&#45;&gt;h25</title>
-<path fill="none" stroke="#000000" d="M351.6735,-149.0321C371.65,-139.4858 405.1412,-123.4812 426.9007,-113.0829"/>
-<polygon fill="#000000" stroke="#000000" points="427.8687,-114.5599 431.6254,-110.825 426.3595,-111.402 427.8687,-114.5599"/>
+<path fill="none" stroke="#000000" d="M348.856,-145.1059C369.273,-127.5798 407.4519,-94.8067 430.0085,-75.4441"/>
+<polygon fill="#000000" stroke="#000000" points="431.3766,-76.576 434.0306,-71.9914 429.0968,-73.9203 431.3766,-76.576"/>
 </g>
 <!-- out -->
 <g id="node24" class="node">
@@ -398,8 +398,8 @@
 <!-- h23&#45;&gt;out -->
 <g id="edge42" class="edge">
 <title>h23&#45;&gt;out</title>
-<path fill="none" stroke="#000000" d="M460.6356,-73.1898C481.4359,-94.9024 522.8637,-138.1472 545.7927,-162.0819"/>
-<polygon fill="#000000" stroke="#000000" points="544.5852,-163.3512 549.3078,-165.7512 547.1127,-160.93 544.5852,-163.3512"/>
+<path fill="none" stroke="#000000" d="M462.4382,-254.108C482.9689,-238.6199 520.6154,-210.2199 543.2707,-193.1291"/>
+<polygon fill="#000000" stroke="#000000" points="544.3813,-194.4835 547.319,-190.0752 542.2734,-191.6893 544.3813,-194.4835"/>
 </g>
 <!-- p21 -->
 <g id="node19" class="node">
@@ -419,14 +419,14 @@
 <!-- h24&#45;&gt;out -->
 <g id="edge43" class="edge">
 <title>h24&#45;&gt;out</title>
-<path fill="none" stroke="#000000" d="M462.4382,-254.108C482.9689,-238.6199 520.6154,-210.2199 543.2707,-193.1291"/>
-<polygon fill="#000000" stroke="#000000" points="544.3813,-194.4835 547.319,-190.0752 542.2734,-191.6893 544.3813,-194.4835"/>
+<path fill="none" stroke="#000000" d="M463.3745,-113.2497C483.8863,-126.9242 520.2107,-151.1405 542.5883,-166.0589"/>
+<polygon fill="#000000" stroke="#000000" points="541.738,-167.5952 546.869,-168.9127 543.6795,-164.6831 541.738,-167.5952"/>
 </g>
 <!-- h25&#45;&gt;out -->
 <g id="edge44" class="edge">
 <title>h25&#45;&gt;out</title>
-<path fill="none" stroke="#000000" d="M463.3745,-113.2497C483.8863,-126.9242 520.2107,-151.1405 542.5883,-166.0589"/>
-<polygon fill="#000000" stroke="#000000" points="541.738,-167.5952 546.869,-168.9127 543.6795,-164.6831 541.738,-167.5952"/>
+<path fill="none" stroke="#000000" d="M460.6356,-73.1898C481.4359,-94.9024 522.8637,-138.1472 545.7927,-162.0819"/>
+<polygon fill="#000000" stroke="#000000" points="544.5852,-163.3512 549.3078,-165.7512 547.1127,-160.93 544.5852,-163.3512"/>
 </g>
 </g>
 </svg>
