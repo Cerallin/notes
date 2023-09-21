@@ -182,7 +182,7 @@
           button.addEventListener('click', this.openSearchModal(modal)));
     },
     registerSearchBox(modal) {
-      const closeModal = this.closeSearchModal(modal);
+      const closeModal = debounce(this.closeSearchModal(modal), 100);
       // close button
       [].forEach.call(document.getElementsByClassName('close-button'),
         button => button.addEventListener('click', closeModal));
@@ -192,6 +192,7 @@
       const inputElement = document.getElementById('search-input');
       inputElement.addEventListener('keyup',
         ({ key }) => {
+          console.log(key)
           if (key === "Enter") searchFunc();
           else if (key === "Escape") closeModal();
         })
