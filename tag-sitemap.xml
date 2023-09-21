@@ -66,6 +66,20 @@
     </url>
 
     <url>
+        <loc>https://cerallin.github.io/notes/tags/Vim/</loc>
+        <lastmod>2023-07-31T08:43:39.384Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://cerallin.github.io/notes/tags/clang/</loc>
+        <lastmod>2023-07-31T08:43:39.384Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://cerallin.github.io/notes/tags/MATLAB/</loc>
         <lastmod>2023-07-31T08:43:39.384Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -81,20 +95,6 @@
 
     <url>
         <loc>https://cerallin.github.io/notes/tags/graphviz/</loc>
-        <lastmod>2023-07-31T08:43:39.384Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://cerallin.github.io/notes/tags/Vim/</loc>
-        <lastmod>2023-07-31T08:43:39.384Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://cerallin.github.io/notes/tags/clang/</loc>
         <lastmod>2023-07-31T08:43:39.384Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
