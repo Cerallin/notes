@@ -1,84 +1,84 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="698" height="698">
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
-<text transform="translate(368,629) rotate(-90)" font-size="60" style="fill:rgb(197, 181, 160)">狐娘</text>
-<text transform="translate(238,342)" font-size="58" style="fill:rgb(170, 150, 137)">Lain</text>
-<text transform="translate(332,207)" font-size="54" style="fill:rgb(122, 105, 96)">NDS</text>
-<text transform="translate(442,637)" font-size="54" style="fill:rgb(197, 182, 161)">玲音</text>
-<text transform="translate(268,676)" font-size="52" style="fill:rgb(196, 180, 160)">游戏</text>
-<text transform="translate(388,678)" font-size="48" style="fill:rgb(195, 179, 159)">Wired</text>
-<text transform="translate(437,341)" font-size="45" style="fill:rgb(215, 189, 173)">漫画</text>
-<text transform="translate(362,284)" font-size="44" style="fill:rgb(220, 194, 177)">狐狸</text>
-<text transform="translate(397,153)" font-size="43" style="fill:rgb(32, 28, 23)">CPU</text>
-<text transform="translate(452,190)" font-size="41" style="fill:rgb(28, 25, 20)">尾巴</text>
-<text transform="translate(249,165)" font-size="40" style="fill:rgb(29, 25, 21)">安装</text>
-<text transform="translate(370,511) rotate(-90)" font-size="39" style="fill:rgb(137, 119, 112)">文件</text>
-<text transform="translate(224,574)" font-size="39" style="fill:rgb(161, 149, 134)">引擎</text>
-<text transform="translate(259,98)" font-size="39" style="fill:rgb(28, 25, 20)">GBA</text>
-<text transform="translate(289,280) rotate(-90)" font-size="38" style="fill:rgb(89, 76, 68)">COMIC</text>
-<text transform="translate(170,617)" font-size="36" style="fill:rgb(201, 186, 166)">Aug</text>
-<text transform="translate(510,619)" font-size="36" style="fill:rgb(195, 180, 160)">互联网</text>
-<text transform="translate(314,45)" font-size="35" style="fill:rgb(27, 24, 19)">世界</text>
-<text transform="translate(556,664)" font-size="35" style="fill:rgb(194, 180, 161)">编译</text>
-<text transform="translate(278,491)" font-size="35" style="fill:rgb(130, 113, 106)">人类</text>
-<text transform="translate(495,224)" font-size="35" style="fill:rgb(28, 24, 20)">耳朵</text>
-<text transform="translate(357,386)" font-size="35" style="fill:rgb(213, 187, 170)">hexo</text>
-<text transform="translate(440,281)" font-size="34" style="fill:rgb(98, 82, 74)">KB</text>
-<text transform="translate(292,391)" font-size="34" style="fill:rgb(215, 189, 172)">游戏机</text>
-<text transform="translate(177,688)" font-size="33" style="fill:rgb(196, 181, 162)">屏幕</text>
-<text transform="translate(302,438)" font-size="33" style="fill:rgb(154, 134, 124)">https</text>
-<text transform="translate(150,644)" font-size="33" style="fill:rgb(200, 185, 166)">任天堂</text>
-<text transform="translate(383,243)" font-size="33" style="fill:rgb(172, 149, 137)">Dec</text>
-<text transform="translate(356,536)" font-size="32" style="fill:rgb(156, 135, 124)">版本</text>
-<text transform="translate(368,83)" font-size="31" style="fill:rgb(27, 24, 19)">下载</text>
-<text transform="translate(202,277)" font-size="31" style="fill:rgb(45, 38, 33)">渲染</text>
-<text transform="translate(216,674)" font-size="31" style="fill:rgb(198, 183, 163)">现实</text>
-<text transform="translate(382,318)" font-size="31" style="fill:rgb(220, 194, 177)">DS</text>
-<text transform="translate(218,97)" font-size="31" style="fill:rgb(28, 25, 20)">图层</text>
-<text transform="translate(67,688)" font-size="31" style="fill:rgb(193, 179, 161)">永遠娘</text>
-<text transform="translate(280,622) rotate(-90)" font-size="31" style="fill:rgb(199, 184, 164)">妖狐</text>
-<text transform="translate(239,212) rotate(-90)" font-size="31" style="fill:rgb(28, 25, 20)">运行</text>
-<text transform="translate(220,125)" font-size="31" style="fill:rgb(28, 25, 20)">设定</text>
-<text transform="translate(441,239)" font-size="31" style="fill:rgb(93, 79, 73)">动画</text>
-<text transform="translate(162,232)" font-size="31" style="fill:rgb(28, 25, 20)">Mutt</text>
-<text transform="translate(425,581)" font-size="31" style="fill:rgb(194, 178, 157)">Slot</text>
-<text transform="translate(342,239)" font-size="30" style="fill:rgb(177, 152, 141)">设置</text>
-<text transform="translate(278,122)" font-size="30" style="fill:rgb(91, 78, 70)">pandoc</text>
-<text transform="translate(485,284)" font-size="30" style="fill:rgb(66, 52, 45)">神明</text>
-<text transform="translate(308,549)" font-size="30" style="fill:rgb(166, 148, 133)">狐仙</text>
-<text transform="translate(400,110)" font-size="30" style="fill:rgb(29, 25, 20)">LaTeX</text>
-<text transform="translate(228,536)" font-size="30" style="fill:rgb(114, 108, 100)">代码</text>
-<text transform="translate(379,48)" font-size="30" style="fill:rgb(27, 24, 19)">连接</text>
-<text transform="translate(348,146)" font-size="30" style="fill:rgb(28, 24, 20)">日志</text>
-<text transform="translate(300,537) rotate(-90)" font-size="30" style="fill:rgb(137, 119, 112)">日本</text>
-<text transform="translate(91,650)" font-size="30" style="fill:rgb(199, 184, 165)">関谷</text>
-<text transform="translate(130,686)" font-size="30" style="fill:rgb(196, 182, 163)">设计</text>
-<text transform="translate(376,613)" font-size="30" style="fill:rgb(198, 182, 161)">信息</text>
-<text transform="translate(293,207)" font-size="30" style="fill:rgb(207, 179, 164)">卡带</text>
-<text transform="translate(245,364)" font-size="30" style="fill:rgb(215, 190, 173)">实现</text>
-<text transform="translate(411,546)" font-size="30" style="fill:rgb(197, 175, 156)">邮件</text>
-<text transform="translate(492,423) rotate(-90)" font-size="30" style="fill:rgb(28, 24, 20)">软件</text>
-<text transform="translate(328,676)" font-size="30" style="fill:rgb(194, 179, 158)">web</text>
-<text transform="translate(377,360)" font-size="25" style="fill:rgb(195, 171, 156)">RetroArch</text>
-<text transform="translate(298,272)" font-size="25" style="fill:rgb(179, 155, 143)">生成</text>
-<text transform="translate(310,156)" font-size="25" style="fill:rgb(62, 50, 46)">系统</text>
-<text transform="translate(166,174)" font-size="25" style="fill:rgb(28, 24, 20)">油豆腐</text>
-<text transform="translate(194,328)" font-size="25" style="fill:rgb(105, 86, 79)">赛博</text>
-<text transform="translate(372,555)" font-size="25" style="fill:rgb(193, 172, 153)">系列</text>
-<text transform="translate(218,156)" font-size="25" style="fill:rgb(28, 25, 20)">神社</text>
-<text transform="translate(277,562)" font-size="25" style="fill:rgb(154, 144, 129)">功能</text>
-<text transform="translate(445,538)" font-size="25" style="fill:rgb(143, 125, 110)">模式</text>
-<text transform="translate(317,630) rotate(-90)" font-size="25" style="fill:rgb(199, 183, 162)">太阳雨</text>
-<text transform="translate(370,408)" font-size="25" style="fill:rgb(192, 167, 153)">BAVEL</text>
-<text transform="translate(491,243)" font-size="25" style="fill:rgb(35, 30, 25)">模拟器</text>
-<text transform="translate(345,286) rotate(-90)" font-size="25" style="fill:rgb(220, 194, 177)">数据</text>
-<text transform="translate(376,477)" font-size="25" style="fill:rgb(136, 117, 110)">问题</text>
-<text transform="translate(480,151)" font-size="25" style="fill:rgb(27, 24, 19)">男主角</text>
-<text transform="translate(438,633) rotate(-90)" font-size="25" style="fill:rgb(198, 182, 161)">存储</text>
-<text transform="translate(487,326)" font-size="25" style="fill:rgb(30, 25, 21)">指令</text>
-<text transform="translate(409,74)" font-size="25" style="fill:rgb(27, 24, 20)">文档</text>
-<text transform="translate(179,198)" font-size="25" style="fill:rgb(28, 25, 20)">内存</text>
-<text transform="translate(270,57)" font-size="25" style="fill:rgb(27, 24, 19)">用户</text>
-<text transform="translate(167,288)" font-size="25" style="fill:rgb(28, 25, 20)">默认</text>
-<text transform="translate(195,295)" font-size="22" style="fill:rgb(62, 53, 47)">Available</text>
-<text transform="translate(137,594)" font-size="22" style="fill:rgb(175, 162, 145)">芯片</text>
+<text transform="translate(295,464)" font-size="60" style="fill:rgb(152, 132, 123)">狐娘</text>
+<text transform="translate(346,274)" font-size="58" style="fill:rgb(213, 188, 171)">Lain</text>
+<text transform="translate(72,684)" font-size="54" style="fill:rgb(184, 171, 154)">NDS</text>
+<text transform="translate(278,275)" font-size="54" style="fill:rgb(175, 152, 139)">玲音</text>
+<text transform="translate(318,396)" font-size="52" style="fill:rgb(215, 188, 171)">游戏</text>
+<text transform="translate(233,555)" font-size="48" style="fill:rgb(172, 159, 143)">Wired</text>
+<text transform="translate(242,148)" font-size="45" style="fill:rgb(28, 25, 20)">漫画</text>
+<text transform="translate(195,282)" font-size="44" style="fill:rgb(54, 46, 40)">狐狸</text>
+<text transform="translate(291,657)" font-size="43" style="fill:rgb(196, 180, 159)">CPU</text>
+<text transform="translate(492,236) rotate(-90)" font-size="41" style="fill:rgb(28, 25, 20)">尾巴</text>
+<text transform="translate(293,115)" font-size="40" style="fill:rgb(28, 25, 20)">安装</text>
+<text transform="translate(388,395)" font-size="39" style="fill:rgb(217, 191, 174)">文件</text>
+<text transform="translate(246,105)" font-size="39" style="fill:rgb(28, 25, 20)">引擎</text>
+<text transform="translate(261,210)" font-size="39" style="fill:rgb(93, 79, 71)">GBA</text>
+<text transform="translate(358,98)" font-size="38" style="fill:rgb(28, 24, 20)">COMIC</text>
+<text transform="translate(478,176) rotate(-90)" font-size="36" style="fill:rgb(27, 24, 19)">Aug</text>
+<text transform="translate(397,661) rotate(-90)" font-size="36" style="fill:rgb(198, 182, 161)">互联网</text>
+<text transform="translate(248,388)" font-size="35" style="fill:rgb(188, 165, 150)">世界</text>
+<text transform="translate(178,308)" font-size="35" style="fill:rgb(45, 38, 33)">编译</text>
+<text transform="translate(202,237)" font-size="35" style="fill:rgb(29, 25, 20)">人类</text>
+<text transform="translate(372,131)" font-size="35" style="fill:rgb(28, 24, 20)">耳朵</text>
+<text transform="translate(113,620)" font-size="35" style="fill:rgb(196, 181, 162)">hexo</text>
+<text transform="translate(451,671)" font-size="34" style="fill:rgb(195, 181, 160)">KB</text>
+<text transform="translate(417,326)" font-size="34" style="fill:rgb(216, 190, 174)">游戏机</text>
+<text transform="translate(362,208)" font-size="33" style="fill:rgb(47, 39, 35)">屏幕</text>
+<text transform="translate(197,606)" font-size="33" style="fill:rgb(200, 185, 165)">https</text>
+<text transform="translate(360,54)" font-size="33" style="fill:rgb(27, 24, 19)">任天堂</text>
+<text transform="translate(329,331)" font-size="33" style="fill:rgb(209, 183, 167)">Dec</text>
+<text transform="translate(386,425)" font-size="32" style="fill:rgb(202, 177, 162)">版本</text>
+<text transform="translate(404,624)" font-size="31" style="fill:rgb(198, 182, 161)">下载</text>
+<text transform="translate(471,369)" font-size="31" style="fill:rgb(63, 53, 48)">渲染</text>
+<text transform="translate(335,138)" font-size="31" style="fill:rgb(28, 24, 20)">现实</text>
+<text transform="translate(247,61)" font-size="31" style="fill:rgb(27, 24, 19)">DS</text>
+<text transform="translate(528,257) rotate(-90)" font-size="31" style="fill:rgb(27, 24, 19)">图层</text>
+<text transform="translate(514,661)" font-size="31" style="fill:rgb(176, 162, 143)">永遠娘</text>
+<text transform="translate(357,513) rotate(-90)" font-size="31" style="fill:rgb(137, 119, 112)">妖狐</text>
+<text transform="translate(345,298)" font-size="31" style="fill:rgb(220, 195, 177)">运行</text>
+<text transform="translate(480,335)" font-size="31" style="fill:rgb(40, 33, 28)">设定</text>
+<text transform="translate(416,192)" font-size="31" style="fill:rgb(30, 25, 21)">动画</text>
+<text transform="translate(189,662)" font-size="31" style="fill:rgb(197, 183, 163)">Mutt</text>
+<text transform="translate(329,591)" font-size="31" style="fill:rgb(198, 182, 162)">Slot</text>
+<text transform="translate(207,195)" font-size="30" style="fill:rgb(28, 25, 20)">设置</text>
+<text transform="translate(267,320) rotate(-90)" font-size="30" style="fill:rgb(138, 118, 107)">pandoc</text>
+<text transform="translate(203,110)" font-size="30" style="fill:rgb(28, 25, 20)">神明</text>
+<text transform="translate(247,353)" font-size="30" style="fill:rgb(220, 195, 177)">狐仙</text>
+<text transform="translate(427,579)" font-size="30" style="fill:rgb(194, 178, 158)">LaTeX</text>
+<text transform="translate(204,343)" font-size="30" style="fill:rgb(130, 109, 101)">代码</text>
+<text transform="translate(192,134)" font-size="30" style="fill:rgb(28, 25, 20)">连接</text>
+<text transform="translate(407,672)" font-size="30" style="fill:rgb(196, 181, 160)">日志</text>
+<text transform="translate(188,572)" font-size="30" style="fill:rgb(153, 145, 132)">日本</text>
+<text transform="translate(278,171)" font-size="30" style="fill:rgb(130, 112, 101)">関谷</text>
+<text transform="translate(166,163)" font-size="30" style="fill:rgb(27, 24, 20)">设计</text>
+<text transform="translate(417,544)" font-size="30" style="fill:rgb(192, 170, 152)">信息</text>
+<text transform="translate(320,311) rotate(-90)" font-size="30" style="fill:rgb(216, 191, 176)">卡带</text>
+<text transform="translate(571,673)" font-size="30" style="fill:rgb(193, 180, 161)">实现</text>
+<text transform="translate(473,622)" font-size="30" style="fill:rgb(198, 182, 162)">邮件</text>
+<text transform="translate(418,136)" font-size="30" style="fill:rgb(28, 25, 19)">软件</text>
+<text transform="translate(408,350)" font-size="30" style="fill:rgb(219, 193, 176)">web</text>
+<text transform="translate(216,688)" font-size="30" style="fill:rgb(195, 181, 160)">RetroArch</text>
+<text transform="translate(541,630)" font-size="30" style="fill:rgb(196, 182, 162)">生成</text>
+<text transform="translate(358,496)" font-size="30" style="fill:rgb(137, 119, 112)">系统</text>
+<text transform="translate(303,50)" font-size="30" style="fill:rgb(27, 24, 20)">油豆腐</text>
+<text transform="translate(178,209) rotate(-90)" font-size="30" style="fill:rgb(27, 24, 20)">赛博</text>
+<text transform="translate(290,491)" font-size="30" style="fill:rgb(137, 119, 112)">系列</text>
+<text transform="translate(312,162)" font-size="30" style="fill:rgb(63, 51, 46)">神社</text>
+<text transform="translate(495,174)" font-size="30" style="fill:rgb(27, 24, 20)">功能</text>
+<text transform="translate(161,256)" font-size="30" style="fill:rgb(28, 25, 20)">模式</text>
+<text transform="translate(313,409) rotate(-90)" font-size="30" style="fill:rgb(220, 194, 176)">太阳雨</text>
+<text transform="translate(346,161)" font-size="30" style="fill:rgb(48, 40, 36)">BAVEL</text>
+<text transform="translate(508,684)" font-size="30" style="fill:rgb(174, 160, 142)">模拟器</text>
+<text transform="translate(481,293)" font-size="30" style="fill:rgb(70, 57, 50)">数据</text>
+<text transform="translate(169,685)" font-size="30" style="fill:rgb(196, 181, 162)">问题</text>
+<text transform="translate(352,226) rotate(-90)" font-size="30" style="fill:rgb(49, 41, 36)">男主角</text>
+<text transform="translate(323,616)" font-size="30" style="fill:rgb(198, 182, 161)">存储</text>
+<text transform="translate(209,629)" font-size="30" style="fill:rgb(200, 185, 165)">指令</text>
+<text transform="translate(371,446)" font-size="30" style="fill:rgb(170, 147, 135)">文档</text>
+<text transform="translate(379,541)" font-size="30" style="fill:rgb(199, 175, 157)">内存</text>
+<text transform="translate(414,221)" font-size="30" style="fill:rgb(63, 50, 46)">用户</text>
+<text transform="translate(320,345) rotate(-90)" font-size="30" style="fill:rgb(221, 195, 178)">默认</text>
+<text transform="translate(381,691)" font-size="23" style="fill:rgb(193, 178, 157)">Available</text>
+<text transform="translate(421,61)" font-size="23" style="fill:rgb(27, 24, 19)">芯片</text>
 </svg>
