@@ -55,7 +55,7 @@
       else if (response.status !== 200)
         throw new RequestError(response.status, `Failed fetching search meta, got status ${response.status}`);
 
-      if (!contentType.includes('application/json'))
+      if (!contentType.match(/application\/json/i))
         throw new ContentTypeError(contentType);
 
       return await response.json();
