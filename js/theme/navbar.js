@@ -2,7 +2,7 @@
   "use strict";
 
   const navbar = document.getElementsByClassName('head')[0];
-  const menubar = document.getElementById('menu-bar');
+  const menubar = document.getElementById('menubar');
 
   function getScrollTop() {
     var scroll_top = 0;
@@ -28,6 +28,9 @@
         if (!menubar.getAttribute('data-show')) {
           if (scrollHeight + 50 > newScrollTop)
             navbar.setAttribute('data-show', 'true');
+          else
+            navbar.removeAttribute('data-show');
+
           scrollHeight = newScrollTop;
         }
       }, 100));
