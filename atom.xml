@@ -6,7 +6,7 @@
   <link href="https://cerallin.github.io/notes/atom.xml" rel="self"/>
   
   <link href="https://cerallin.github.io/notes/"/>
-  <updated>2023-08-24T15:28:35.848Z</updated>
+  <updated>2023-10-14T11:20:54.293Z</updated>
   <id>https://cerallin.github.io/notes/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://cerallin.github.io/notes/2023/10/14/c-guide-10-14-%E7%AC%AC%E4%B8%80%E7%AB%A0-printf-Hello-World/"/>
+    <id>https://cerallin.github.io/notes/2023/10/14/c-guide-10-14-%E7%AC%AC%E4%B8%80%E7%AB%A0-printf-Hello-World/</id>
+    <published>2023-10-14T07:30:01.000Z</published>
+    <updated>2023-10-14T11:20:54.293Z</updated>
+    
+    <content type="html"><![CDATA[<style>@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap');article p,article h1,article h2,article h3 {  font-family: 'Red Hat Mono', 'Noto Sans SC';}</style><!--前情提要，要包括两个方面：1. 上一章学了C语言的什么2. 剧情进展  --><blockquote><p>这是一则带剧情的C语言入门指南，灵感来自我的一个梦。梦的内容是每天放学后大姐姐指导小学弟学习C/C++的事情。虽然后续展开……（暂时还请允许我保密），但是一开始，确实是这样的一个故事。在写作之前，我也 啊C语言的内容和剧情究竟是什么比例才合适。我不确定是否</p></blockquote><span id="more"></span><h3 id="第一章-printfhello-world">第一章 printf("Hello World");</h3><!-- To Be continued --><!-- 记得把上一篇链接到这 --><p class="fin">未完待续……</p><!-- <p class="fin">  [to <span style="color:blue">B</span><span style="color:red">e</span> continued ->](/path/to/nExt)</p> -->]]></content>
+    
+    
+    <summary type="html">&lt;style&gt;
+@import url(&#39;https://fonts.googleapis.com/css2?family=Red+Hat+Mono&amp;display=swap&#39;);
+
+article p,
+article h1,
+article h2,
+article h3 {
+  font-family: &#39;Red Hat Mono&#39;, &#39;Noto Sans SC&#39;;
+}
+&lt;/style&gt;
+&lt;!--
+
+前情提要，要包括两个方面：
+1. 上一章学了C语言的什么
+2. 剧情进展
+
+  --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一则带剧情的C语言入门指南，灵感来自我的一个梦。梦的内容是每天放学后大姐姐指导小学弟学习C/C++的事情。虽然后续展开……（暂时还请允许我保密），但是一开始，确实是这样的一个故事。在写作之前，我也 啊C语言的内容和剧情究竟是什么比例才合适。我不确定是否&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="C语言入门" scheme="https://cerallin.github.io/notes/categories/C%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
+    
+    <category term="C" scheme="https://cerallin.github.io/notes/tags/C/"/>
+    
+    <category term="小说" scheme="https://cerallin.github.io/notes/tags/%E5%B0%8F%E8%AF%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>狐娘题材成人漫画考察</title>
@@ -543,31 +585,6 @@
     <category term="VBS" scheme="https://cerallin.github.io/notes/tags/VBS/"/>
     
     <category term="PowerShell" scheme="https://cerallin.github.io/notes/tags/PowerShell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一种基于类UNIX系统进行高效并行执行的方法</title>
-    <link href="https://cerallin.github.io/notes/2022/01/01/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8E%E7%B1%BBUNIX%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E9%AB%98%E6%95%88%E5%B9%B6%E8%A1%8C%E6%89%A7%E8%A1%8C%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>https://cerallin.github.io/notes/2022/01/01/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8E%E7%B1%BBUNIX%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E9%AB%98%E6%95%88%E5%B9%B6%E8%A1%8C%E6%89%A7%E8%A1%8C%E7%9A%84%E6%96%B9%E6%B3%95/</id>
-    <published>2022-01-01T09:32:40.000Z</published>
-    <updated>2023-07-31T08:43:39.384Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>本文介绍一种利用GNU parallel进行高并发运行计算密集型并行任务的方案。上次用这软件是在写爬虫批量下载漫画...没想到科研中也遇到了类似的问题。遂记录下来与大家分享。</p></blockquote><span id="more"></span><h3 id="系统要求">系统要求</h3><p>首先，Windows系统是不可以的。从<a href="https://www.gnu.org/software/parallel/">官网</a>上看，<code>GNU parallel</code>没有win32 build。或者，我正在找替代或者解决方案。</p><p>已知的尝试是在<code>git-bash</code>里安装<code>parallel</code>，但是安装是能安装，却不能正常工作。在<code>git-bash</code>里安装<code>parallel</code>参考了stackoverflow的<a href="https://stackoverflow.com/questions/52393850/how-to-install-gnu-parallel-on-windows-10-using-git-bash">一篇回答</a>。</p><p>我在<code>git-bash</code>里运行了以下指令成功安装<code>parallel</code>，虽然安装过程中不停地报错。</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ (wget -O - pi.dk/<span class="number">3</span> || lynx -source pi.dk/<span class="number">3</span> || curl pi.dk/<span class="number">3</span>/ || \</span><br><span class="line">   <span class="keyword">fetch</span> -o - http://pi.dk/<span class="number">3</span> ) &gt; install.sh</span><br><span class="line">$ bash ./install.sh</span><br><span class="line">$ parallel <span class="comment">--version</span></span><br><span class="line">GNU parallel <span class="number">20211222</span></span><br><span class="line">Copyright (C) <span class="number">2007</span><span class="number">-2021</span> Ole Tange, http://ole.tange.dk <span class="keyword">and</span> Free Software</span><br><span class="line">Foundation, Inc.</span><br><span class="line">License GPLv3+: GNU GPL <span class="keyword">version</span> <span class="number">3</span> <span class="keyword">or</span> later &lt;https://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This <span class="keyword">is</span> free software: you are free <span class="keyword">to</span> change <span class="keyword">and</span> redistribute it.</span><br><span class="line">GNU parallel comes <span class="keyword">with</span> <span class="keyword">no</span> warranty.</span><br><span class="line"></span><br><span class="line">Web site: https://www.gnu.org/software/parallel</span><br><span class="line"></span><br><span class="line"><span class="keyword">When</span> <span class="keyword">using</span> programs that use GNU Parallel <span class="keyword">to</span> process data <span class="keyword">for</span> <span class="keyword">publication</span></span><br><span class="line">please cite <span class="keyword">as</span> described <span class="keyword">in</span> <span class="string">'parallel --citation'</span>.</span><br></pre></td></tr></table></figure><h3 id="问题描述">问题描述</h3><figure><img src="/notes/images/graphviz/parallel_flow.svg" id="fig:dependency" alt="图1: 任务节点依赖关系图"><figcaption aria-hidden="true">图1: 任务节点依赖关系图</figcaption></figure><p>本文将要处理的问题具有<a href="#fig:dependency">图1</a>所示结构，即某一个步骤完全由有限个并行执行的任务组成。这些并行任务之间并没有任何依赖关系，但下一步依赖于所有这些任务，即当这些并行任务都结束时，下一项任务才能开始。</p><p>以下载一话漫画为例。</p><p>假设某连载漫画的第5话有20页图片，在某漫画网站上，该漫画信息页面的路径为<code>/comic/:comic_id</code>，获取一张图片的路径为<code>/gallery/:gallery_id/:pic_file</code>，其中<code>:pic_file</code>是以<code>.png</code>或者<code>.jpg</code>结尾的图片名。</p><p>在漫画信息页面上显示有<code>comic_id</code>和<code>gallery_id</code>的对应关系，每一个<code>comic_id</code>有且仅有一个<code>gallery_id</code>与之对应。 <code>:pic_file</code>的列表和次序可以通过带有<code>:gallery_id</code>请求某API获取。</p><p><del>好吧，这些都不重要，不要乱爬漫画站。</del></p><h3 id="解决方案">解决方案</h3><p>可以看到，上述任务可以使用<a href="#fig:dependency">图1</a>所示结构来描述，获取<code>comic_id</code>和<code>gallery_id</code>以及<code>:pic_file</code>列表可以看作是并行任务集合的前置准备。所有图片的下载可以是高并发的，彼此之间并没有什么依赖关系。任务完成时所有图片都已经下载完毕。</p><p>那么，如何使用<code>GNU parallel</code>写出最快速的漫画爬虫呢？ shell脚本的部分内容如下： <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># comic_id := user defined number</span></span><br><span class="line"><span class="comment"># gallery_id := get gallery_id with comic_id</span></span><br><span class="line"><span class="comment"># pic_list := Array of pic_files fetched with gallery_id</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># download_pic could download a picture at once.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @param $pic filename of picture</span></span><br><span class="line"><span class="comment"># @param $order order of picture</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">download_pic</span></span>() {</span><br><span class="line">    <span class="built_in">local</span> pic=<span class="variable">$1</span></span><br><span class="line">    <span class="built_in">local</span> order=<span class="variable">$2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Suffix of the picture, e.g., 'png', 'jpg'.</span></span><br><span class="line">    <span class="built_in">local</span> suffix=<span class="variable">${pic##*\.}</span></span><br><span class="line"></span><br><span class="line">    curl -s <span class="variable">$PIC_API</span>/gallery/<span class="variable">$pic</span> -o <span class="string">"<span class="variable">${order}</span>.<span class="variable">${suffix}</span>"</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># Export the function so that parallel could load it.</span></span><br><span class="line"><span class="built_in">export</span> -f download_pic</span><br><span class="line"></span><br><span class="line">parallel -j 4 \</span><br><span class="line">    download_pic \</span><br><span class="line">    ::: <span class="variable">${pic_list[@]}</span></span><br></pre></td></tr></table></figure></p><p>其中，<code>:::</code>非常有特点，既不是一个<code>:</code>也不是两个<code>:</code>。</p><p><code>-j</code>选项指定使用多少个CPU核心参与并行任务的执行，未指定则默认全部（物理核数）。 <code>download_pic</code>为要并行执行的任务，<code>:::</code>后边是任务参数。</p><p>当有多个<code>:::</code>时会自动枚举全部选项，比如，<code>parallel echo ::: 1 2 ::: a b c</code>的一种可能的输出结果为：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ parallel <span class="built_in">echo</span> ::: 1 2 ::: a b c</span><br><span class="line">1 a</span><br><span class="line">1 b</span><br><span class="line">1 c</span><br><span class="line">2 a</span><br><span class="line">2 b</span><br><span class="line">2 c</span><br></pre></td></tr></table></figure><p><strong>P.S.</strong> 为了最高的效率，parallel不会很及时地进行输出，而是先缓存起来。因此命令行或者文件输出和任务执行情况不同步。</p><h3 id="注意事项">注意事项</h3><p>正如<a href="#系统要求">系统要求</a>中parallel的输出中所提到的，当论文数据处理用到了该工具的时候，应该按照parallel的作者给出的形式<span class="citation" data-cites="tange2011gnu">[<a href="#ref-tange2011gnu" role="doc-biblioref">1</a>]</span>进行引用。</p><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ parallel <span class="comment">--citation</span></span><br><span class="line"># ...</span><br><span class="line">Academic tradition requires you <span class="keyword">to</span> cite works you base your article <span class="keyword">on</span>.</span><br><span class="line"><span class="keyword">When</span> using programs that <span class="keyword">use</span> GNU Parallel <span class="keyword">to</span> <span class="keyword">process</span> data <span class="keyword">for</span> publication</span><br><span class="line">please cite:</span><br><span class="line"></span><br><span class="line">  O. Tange (<span class="number">2011</span>): GNU Parallel - The Command-<span class="literal">Line</span> Power Tool,</span><br><span class="line">  ;login: The USENIX Magazine, February <span class="number">2011</span>:<span class="number">42</span>-<span class="number">47</span>.</span><br></pre></td></tr></table></figure><p><span class="display-block text-indent-none mt-4 mb-2 fw-600">Fin.</span></p><h3 class="unnumbered" data-toc-unnumbered="true" id="参考文献">参考文献</h3><div id="refs" class="references csl-bib-body" role="doc-bibliography"><div id="ref-tange2011gnu" class="csl-entry" role="doc-biblioentry"><div class="csl-left-margin">[1] </div><div class="csl-right-inline">O. Tange, <span>“<span>GNU</span> parallel - the command-line power tool,”</span> <em>The USENIX Magazine</em>, vol. 36, no. 1, pp. 42–47, 2011.</div></div></div>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文介绍一种利用GNU parallel进行高并发运行计算密集型并行任务的方案。上次用这软件是在写爬虫批量下载漫画...没想到科研中也遇到了类似的问题。遂记录下来与大家分享。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="计算机与通信工程" scheme="https://cerallin.github.io/notes/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/"/>
-    
-    
-    <category term="Linux" scheme="https://cerallin.github.io/notes/tags/Linux/"/>
-    
-    <category term="shell" scheme="https://cerallin.github.io/notes/tags/shell/"/>
     
   </entry>
   
