@@ -506,9 +506,9 @@ Staff负责制作的原创实验性动画，1998年7月6日起在东京电视台
     
     <category term="Linux" scheme="https://cerallin.github.io/notes/tags/Linux/"/>
     
-    <category term="WSL" scheme="https://cerallin.github.io/notes/tags/WSL/"/>
-    
     <category term="压缩包" scheme="https://cerallin.github.io/notes/tags/%E5%8E%8B%E7%BC%A9%E5%8C%85/"/>
+    
+    <category term="WSL" scheme="https://cerallin.github.io/notes/tags/WSL/"/>
     
   </entry>
   
@@ -559,11 +559,11 @@ href=&quot;/2022/01/01/符号回归与画图/&quot;&gt;前文&lt;/a&gt;讲到，
     <category term="计算机与通信工程" scheme="https://cerallin.github.io/notes/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/"/>
     
     
-    <category term="LaTeX" scheme="https://cerallin.github.io/notes/tags/LaTeX/"/>
-    
     <category term="Python" scheme="https://cerallin.github.io/notes/tags/Python/"/>
     
     <category term="机器学习" scheme="https://cerallin.github.io/notes/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="LaTeX" scheme="https://cerallin.github.io/notes/tags/LaTeX/"/>
     
   </entry>
   
