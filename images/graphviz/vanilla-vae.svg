@@ -9,11 +9,6 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 302)">
 <title>vanillaVAE</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-302 612,-302 612,4 -4,4"/>
-<g id="clust6" class="cluster">
-<title>cluster_logvar</title>
-<polygon fill="none" stroke="#ffffff" points="219,-25 219,-145 271,-145 271,-25 219,-25"/>
-<text text-anchor="middle" x="245" y="-128.4" font-family="Times,serif" font-size="14.00" fill="#000000">logvar</text>
-</g>
 <g id="clust1" class="cluster">
 <title>cluster_input</title>
 <polygon fill="none" stroke="#ffffff" points="0,-127 0,-204 81,-204 81,-127 0,-127"/>
@@ -38,6 +33,11 @@
 <title>cluster_z</title>
 <polygon fill="none" stroke="#ffffff" points="291,-105 291,-225 379,-225 379,-105 291,-105"/>
 <text text-anchor="middle" x="335" y="-208.4" font-family="Times,serif" font-size="14.00" fill="#000000">Latent Space</text>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_logvar</title>
+<polygon fill="none" stroke="#ffffff" points="219,-25 219,-145 271,-145 271,-25 219,-25"/>
+<text text-anchor="middle" x="245" y="-128.4" font-family="Times,serif" font-size="14.00" fill="#000000">logvar</text>
 </g>
 <g id="clust8" class="cluster">
 <title>cluster_output_hidden</title>
