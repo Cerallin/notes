@@ -14,15 +14,15 @@
 <polygon fill="none" stroke="#ffffff" points="528,-238 528,-315 619,-315 619,-238 528,-238"/>
 <text text-anchor="middle" x="573.5" y="-298.4" font-family="Times,serif" font-size="14.00" fill="#000000">Output Layer</text>
 </g>
-<g id="clust10" class="cluster">
-<title>cluster_output_hidden</title>
-<polygon fill="none" stroke="#ffffff" points="410,-119 410,-401 508,-401 508,-119 410,-119"/>
-<text text-anchor="middle" x="459" y="-384.4" font-family="Times,serif" font-size="14.00" fill="#000000">Hidden Layers</text>
-</g>
 <g id="clust1" class="cluster">
 <title>cluster_input</title>
 <polygon fill="none" stroke="#ffffff" points="0,-174 0,-251 81,-251 81,-174 0,-174"/>
 <text text-anchor="middle" x="40.5" y="-234.4" font-family="Times,serif" font-size="14.00" fill="#000000">Input Layer</text>
+</g>
+<g id="clust10" class="cluster">
+<title>cluster_output_hidden</title>
+<polygon fill="none" stroke="#ffffff" points="410,-119 410,-401 508,-401 508,-119 410,-119"/>
+<text text-anchor="middle" x="459" y="-384.4" font-family="Times,serif" font-size="14.00" fill="#000000">Hidden Layers</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_input_hidden</title>
