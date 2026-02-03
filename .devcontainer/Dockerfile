@@ -22,6 +22,8 @@ RUN apt-get install -y --no-install-recommends gcc g++ make imagemagick
 
 # python
 RUN apt-get install -y --no-install-recommends python3-wordcloud
+# debian 没有 libjpeg8-dev
+RUN apt-get install -y --no-install-recommends libpixman-1-dev libcairo2-dev libpango1.0-dev libgif-dev
 
 RUN apt-get clean
 
