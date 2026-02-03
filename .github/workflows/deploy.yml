@@ -28,8 +28,8 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Set up PATH
-        run: echo "PATH=$PATH:/opt/dependencies" >> $GITHUB_ENV
+      - name: Add dependencies to PATH
+        run: echo "/opt/dependencies" >> $GITHUB_PATH
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,9 +50,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Link plugins
-        run: npm run plugin
 
       - name: Configure Git for deploy
         run: |
