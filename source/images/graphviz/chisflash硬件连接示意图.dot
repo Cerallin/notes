@@ -1,0 +1,12 @@
+digraph FlashChain {
+    rankdir=LR;
+    node [shape=box];
+
+    PC          [label="电脑
+FlashGBX"];
+    Flasher     [label="BaconFlasher"];
+    Cartridge   [label="卡带"];
+
+    PC -> Flasher   [label="USB"];
+    Flasher -> Cartridge [label="金手指/针孔"];
+}

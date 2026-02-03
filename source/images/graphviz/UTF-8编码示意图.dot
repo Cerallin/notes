@@ -1,0 +1,44 @@
+digraph telegram {
+	character[
+		shape=box,
+		label="0x7231"
+	];
+
+	character -> char_expanded;
+	char_expanded:d1 -> u1:d;
+	char_expanded:d2 -> u2:d;
+	char_expanded:d3 -> u3:d;
+
+	char_expanded[
+		shape=record,
+		label=<<table border="0" cellpadding="4" cellspacing="0"><tr>
+			<td port="d1" border="0">0111</td>
+			<td port="d2" border="0">001000</td>
+			<td port="d3" border="0">110001</td>
+		</tr></table>>
+	];
+
+	u1[
+		shape=record, 
+		label=<<table border="0" cellspacing="0"><tr>
+			<td port="p" border="0"><font color="red">1110</font></td>
+			<td port="d" border="0">0111</td>
+		</tr></table>>
+	];
+	
+	u2[
+		shape=record, 
+		label=<<table border="0" cellspacing="0"><tr>
+			<td port="p" border="0"><font color="red">10</font></td>
+			<td port="d" border="0">001000</td>
+		</tr></table>>
+	];
+
+	u3[
+		shape=record, 
+		label=<<table border="0" cellspacing="0"><tr>
+			<td port="p" border="0"><font color="red">10</font></td>
+			<td port="d" border="0">110001</td>
+		</tr></table>>
+	];
+}

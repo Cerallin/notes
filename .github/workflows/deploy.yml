@@ -1,0 +1,60 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.meta.outputs.image }}
+    steps:
+      - id: meta
+        run: |
+          REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "image=ghcr.io/${REPO}/devcontainer:latest" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: setup
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 用于 hexo deploy 推送到 gh-pages
+    container:
+      image: ${{ needs.setup.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Initialize submodules
+        run: |
+          git submodule init
+          git submodule update --remote
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Link plugins
+        run: npm run plugin
+
+      - name: Configure Git for deploy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to gh-pages
+        env:
+          DEPLOY_REPO: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          sed -i "s|repo:.*|repo: $DEPLOY_REPO|" _config.yml
+          npx hexo deploy

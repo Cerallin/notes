@@ -1,0 +1,10 @@
+digraph dependency {
+    rankdir="LR"
+    "Preperation" -> {
+        "Task 1",
+        "Task 2",
+        "Task 3",
+        "...",
+        "Task 10086"
+    } -> "Job Done"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "note-site",
+    "dockerFile": "./Dockerfile",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "streetsidesoftware.code-spell-checker",
+                "yzhang.markdown-all-in-one",
+                "eamodio.gitlens",
+                "sysoev.language-stylus",
+                "Wscats.eno",
+                "haskell.haskell"
+            ]
+        }
+    },
+    "forwardPorts": [
+        4000
+    ],
+    "mounts": [
+        "source=/home/julia/.ssh,target=/home/texlive/.ssh,type=bind,consistency=cached"
+    ]
+}

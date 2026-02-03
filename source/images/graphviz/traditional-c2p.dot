@@ -1,0 +1,55 @@
+digraph tradC2P {
+	rankdir = LR;
+	splines = line;
+	nodesep = .1;
+	node [label=""];
+	compound = true
+
+    subgraph cluster_input {
+		color = white;
+		node [style=solid, color=green, shape=circle];
+			in;
+			label = "Input Layer";
+	}
+
+	subgraph cluster_input_hidden {
+		color = white;
+		{
+			node [style=solid, color=blue, shape=circle];
+			 h11; h12; h13;
+		}
+
+		node [style=solid, shape=point];
+		p11; p12; p13;
+
+        {
+			node [style=solid, color=blue, shape=circle];
+			h14; h15;
+		}
+		label = "Hidden Layers";
+	}
+
+	subgraph cluster_feat_in {
+		color=white;
+		node [style=solid, color=red, shape=circle];
+        f11; f12;
+        label = "Features";
+	}
+
+    in -> h11[arrowsize=.5]
+    in -> h12[arrowsize=.5]
+    in -> h13[arrowsize=.5]
+    in -> h14[arrowsize=.5]
+    in -> h15[arrowsize=.5]
+
+    h11 -> f11[arrowsize=.5]
+    h11 -> f12[arrowsize=.5]
+    h12 -> f11[arrowsize=.5]
+    h12 -> f12[arrowsize=.5]
+    h13 -> f11[arrowsize=.5]
+    h13 -> f12[arrowsize=.5]
+    h14 -> f11[arrowsize=.5]
+    h14 -> f12[arrowsize=.5]
+    h15 -> f11[arrowsize=.5]
+    h15 -> f12[arrowsize=.5]
+}

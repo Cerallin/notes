@@ -1,0 +1,127 @@
+digraph vanillaVAE {
+	rankdir = LR;
+	splines = line;
+	nodesep = .1;
+	node [label=""];
+	compound = true
+
+    subgraph cluster_input {
+		color = white;
+		node [style=solid, color=green, shape=circle];
+			in;
+			label = "Input Layer";
+	}
+
+	subgraph cluster_input_hidden {
+		color = white;
+		{
+			node [style=solid, color=blue, shape=circle];
+			 h11; h12; h13;
+		}
+
+		node [style=solid, shape=point];
+		p11; p12; p13;
+
+        {
+			node [style=solid, color=blue, shape=circle];
+			h14; h15;
+		}
+		label = "Hidden Layers";
+	}
+
+	subgraph cluster_mu {
+		color=white;
+		node [style=solid, color=blue, shape=circle];
+        mu1; mu2;
+        label = "mu";
+	}
+
+	subgraph cluster_logvar {
+		color=white;
+		node [style=solid, color=blue, shape=circle];
+        logvar1; logvar2;
+        label = "logvar";
+	}
+
+	subgraph cluster_z {
+		color=white;
+		node [style=solid, color=blue, shape=circle];
+        z1; z2;
+        label = "Latent Space";
+	}
+
+	subgraph cluster_output_hidden {
+		color = white;
+		{
+			node [style=solid, color=blue, shape=circle];
+			 h21; h22; h23;
+		}
+
+		node [style=solid, shape=point];
+		p21; p22; p23;
+
+        {
+			node [style=solid, color=blue, shape=circle];
+			h24; h25;
+		}
+		label = "Hidden Layers";
+	}
+
+    subgraph cluster_output {
+		color = white;
+		node [style=solid, color=red, shape=circle];
+        out;
+        label = "Output Layer";
+	}
+
+    in -> h11[arrowsize=.5]
+    in -> h12[arrowsize=.5]
+    in -> h13[arrowsize=.5]
+    in -> h14[arrowsize=.5]
+    in -> h15[arrowsize=.5]
+
+    h11 -> mu1[arrowsize=.5]
+    h11 -> mu2[arrowsize=.5]
+    h12 -> mu1[arrowsize=.5]
+    h12 -> mu2[arrowsize=.5]
+    h13 -> mu1[arrowsize=.5]
+    h13 -> mu2[arrowsize=.5]
+    h14 -> mu1[arrowsize=.5]
+    h14 -> mu2[arrowsize=.5]
+    h15 -> mu1[arrowsize=.5]
+    h15 -> mu2[arrowsize=.5]
+
+    h11 -> logvar1[arrowsize=.5]
+    h11 -> logvar2[arrowsize=.5]
+    h12 -> logvar1[arrowsize=.5]
+    h12 -> logvar2[arrowsize=.5]
+    h13 -> logvar1[arrowsize=.5]
+    h13 -> logvar2[arrowsize=.5]
+    h14 -> logvar1[arrowsize=.5]
+    h14 -> logvar2[arrowsize=.5]
+    h15 -> logvar1[arrowsize=.5]
+    h15 -> logvar2[arrowsize=.5]
+
+    mu1 -> z1[arrowsize=.5]
+    mu2 -> z2[arrowsize=.5]
+
+    logvar1 -> z1[arrowsize=.5]
+    logvar2 -> z2[arrowsize=.5]
+
+    z1 -> h21[arrowsize=.5]
+    z1 -> h22[arrowsize=.5]
+    z1 -> h23[arrowsize=.5]
+    z1 -> h24[arrowsize=.5]
+    z1 -> h25[arrowsize=.5]
+    z2 -> h21[arrowsize=.5]
+    z2 -> h22[arrowsize=.5]
+    z2 -> h23[arrowsize=.5]
+    z2 -> h24[arrowsize=.5]
+    z2 -> h25[arrowsize=.5]
+
+    h21 -> out[arrowsize=.5]
+    h22 -> out[arrowsize=.5]
+    h23 -> out[arrowsize=.5]
+    h24 -> out[arrowsize=.5]
+    h25 -> out[arrowsize=.5]
+}

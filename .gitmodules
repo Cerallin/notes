@@ -1,0 +1,7 @@
+[submodule "themes/hexo-theme-yuzu"]
+	path = themes/hexo-theme-yuzu
+	url = https://github.com/cerallin/hexo-theme-yuzu
+
+[submodule "plugins/hexo-generator-word-cloud"]
+	path = plugins/hexo-generator-word-cloud
+	url = https://github.com/Cerallin/hexo-generator-word-cloud

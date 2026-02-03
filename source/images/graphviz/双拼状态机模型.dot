@@ -1,0 +1,11 @@
+digraph telegram {
+    rankdir = "LR";
+
+    y[label="待输入韵母"];
+    s[label="待输入声母"];
+
+    s -> y[label="输入一个字符"];
+
+    y -> s[label="输入的韵母合法"];
+    y -> y[label="输入的韵母不合法"];
+}

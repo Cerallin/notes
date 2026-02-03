@@ -1,0 +1,4 @@
+digraph dependency {
+    rankdir="LR"
+    "gplearn"-> "SymPy" -> "LaTeX" -> "SVG"
+}

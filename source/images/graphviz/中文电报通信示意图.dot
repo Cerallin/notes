@@ -1,0 +1,24 @@
+digraph telegram {
+    rankdir = "LR";
+
+    subgraph cluster_sending {
+        node [shape=box];
+        label = "发送方";
+
+        汉字send[label="我爱你"];
+        中文电码send[label="2053 1947 0132"];
+    }
+
+    subgraph cluster_recieving {
+		node [shape=box];
+        label = "接收方";
+
+        中文电码[label="2053 1947 0132"];
+        汉字[label="我爱你"];
+
+        中文电码 -> 汉字;
+    }
+
+    汉字send -> 中文电码send;
+    中文电码send -> 中文电码[style=dashed, label="小纸条"];
+}

@@ -1,0 +1,12 @@
+root: /notes/
+
+smooth_corner: false
+
+refs_sidebar:
+  enable: true
+
+code:
+  line_number: true
+  line_threshold: 5
+
+archive_columns: 3

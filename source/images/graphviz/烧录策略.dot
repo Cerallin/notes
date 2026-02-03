@@ -1,0 +1,57 @@
+digraph SaveTypeFlow {
+    rankdir=TB;
+    node [shape=rectangle, fontname="SimSun"];
+
+    Start [label="开始"];
+    CheckSaveType [
+		shape=diamond,
+		fixedsize=false,
+		height=1.4, 
+		label="游戏存档类型是 FLASH？"
+	];
+    CheckCartType [
+		shape=diamond,
+		fixedsize=false,
+		height=1.4, 
+		label="烧录目标是 FLASH 卡带？"
+	];
+    NoPatch [label="无需给游戏 ROM 打补丁"];
+
+    NeedSRAMPatch [label="给游戏 ROM 打 SRAM 补丁"];
+    CheckBattery [
+		shape=diamond,
+		fixedsize=false,
+		height=1.4, 
+		label="SRAM 卡带是否带电池？"
+	];
+    NeedNoBatteryPatch [label="再打免电补丁"];
+
+    TestSave [
+		shape=diamond,
+		fixedsize=false,
+		height=1.4,
+		label="游戏能否正常保存？"
+	];
+    UseBatteryCart [label="改用带电池的 SRAM 卡带和不免电的 ROM"];
+    End [label="结束"];
+
+    Start -> CheckSaveType;
+    CheckSaveType -> CheckCartType [label="是"];
+    CheckSaveType -> NeedSRAMPatch [label="否"];
+
+    CheckCartType -> NoPatch [label="是"];
+    CheckCartType -> NeedSRAMPatch [label="否"];
+
+    NoPatch -> End;
+
+    NeedSRAMPatch -> CheckBattery;
+    CheckBattery -> TestSave [label="是"];
+    CheckBattery -> NeedNoBatteryPatch [label="否"];
+
+    NeedNoBatteryPatch -> TestSave;
+
+    TestSave -> End [label="能"];
+    TestSave -> UseBatteryCart [label="不能"];
+
+    UseBatteryCart -> End;
+}
