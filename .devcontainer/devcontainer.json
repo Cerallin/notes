@@ -1,6 +1,7 @@
 {
     "name": "note-site",
     "dockerFile": "./Dockerfile",
+    "remoteUser": "texlive",
     "customizations": {
         "vscode": {
             "extensions": [

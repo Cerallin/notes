@@ -33,10 +33,14 @@ RUN \
     wget -q https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/pandoc-crossref-Linux-X64.tar.xz; \
     tar xf pandoc-crossref-Linux-X64.tar.xz; \
     rm -rf ./*tar* pandoc-${PANDOC_VERSION}
-# 创建dev用户
+
+# 创建 dev 用户（供本地 devcontainer 使用；CI 默认用 root）
 ARG USERNAME=texlive
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+RUN groupadd --gid $USER_GID $USERNAME 2>/dev/null || true && \
+    useradd --uid $USER_UID --gid $USER_GID -m -s /bin/bash $USERNAME 2>/dev/null || true && \
+    echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER $USERNAME
 
@@ -48,3 +52,6 @@ SHELL ["/bin/bash", "--login", "-i", "-c"]
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 RUN source $HOME/.bashrc && nvm install $NODE_VER && nvm alias default $NODE_VER
 SHELL ["/bin/bash", "--login", "-c"]
+
+# 镜像默认以 root 运行，供 GitHub Action deploy 使用；本地 devcontainer 通过 remoteUser 使用 texlive
+USER root
