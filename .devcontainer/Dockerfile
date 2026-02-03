@@ -30,10 +30,9 @@ RUN \
     wget -q https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz; \
     tar zxf pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz; \
     mv pandoc-${PANDOC_VERSION}/bin/pandoc pandoc; \
-    wget -q https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/pandoc-crossref-Linux.tar.xz; \
-    tar xf pandoc-crossref-Linux.tar.xz; \
+    wget -q https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/pandoc-crossref-Linux-X64.tar.xz; \
+    tar xf pandoc-crossref-Linux-X64.tar.xz; \
     rm -rf ./*tar* pandoc-${PANDOC_VERSION}
-
 # 创建dev用户
 ARG USERNAME=texlive
 ARG USER_UID=1000
