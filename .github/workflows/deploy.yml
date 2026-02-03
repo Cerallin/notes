@@ -25,10 +25,11 @@ jobs:
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    env:
-      PATH: $PATH:/opt/dependencies
 
     steps:
+      - name: Set up PATH
+        run: echo "PATH=$PATH:/opt/dependencies" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
