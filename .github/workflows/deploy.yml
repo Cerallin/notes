@@ -25,6 +25,8 @@ jobs:
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+    env:
+      PATH: $PATH:/opt/dependencies
 
     steps:
       - name: Checkout
