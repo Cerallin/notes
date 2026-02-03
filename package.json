@@ -15,10 +15,7 @@
   },
   "dependencies": {
     "@cerallin/hexo-generator-word-cloud": "^1.0.5",
-    "canvas": "^3.2.1",
-    "ejs-lint": "^2.0.1",
     "hexo": "^8.1.1",
-    "hexo-ai-description": "^1.0.2",
     "hexo-cdnify": "^1.1.0",
     "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^4.0.0",
