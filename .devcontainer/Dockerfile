@@ -1,5 +1,5 @@
 # Workaround for texlive 但是为啥 python3-wordcloud 需要texlive-base？
-FROM texlive/texlive:latest-full
+FROM texlive/texlive:latest-basic
 
 ENV LANG en_US.UTF-8
 
