@@ -1,0 +1,10 @@
+# Dependabot 配置 - 自动创建依赖更新 PR
+# 文档: https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # npm 依赖 (package.json)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
