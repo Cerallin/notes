@@ -1,0 +1,131 @@
+<html lang="zh"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="这篇文章介绍了符号回归中通过Python库gplearn生成复杂公式，并利用Graphviz将其以树状图形式直观化表示的方法。文中详细介绍了Graphviz的功能、安装步骤及其通过dot语言生成图形的过程。最后通过Python代码示例说明如何生成树状图文件并保存为PDF格式。"><title>符号回归与画图 - Cerallin的笔记本 - 瞎折腾～～</title><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="/notes/css/style.css"><link rel="stylesheet" href="/notes/css/helpers.css"><script src="/notes/js/clipboard/clipboard.min.js"></script><script src="/notes/js/bootstrap.js"></script><script>Theme.counter={register:function(){request("//visitor-counter.cerallin.top/count.php/?page="+encodeURI(window.location.href),{method:"GET"}).then(e=>{for(var t in e){var n=document.getElementById(t);n&&(n.innerText=e[t])}}).catch(e=>{console.error("Fetching visit count failed.",e)})}}</script><style>body hl:after {
+    content: ' ';
+    display: inline;
+    font-family: inherit;
+    font-size: 0.45em;
+}
+
+html code hl,
+html pre hl,
+html kbd hl,
+html samp hl,
+html ruby hl,
+html .tag-list-item hl {
+    display: none;
+}
+
+html ol > hl,
+html ul > hl {
+    display: none;
+}</style><meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}</style><link rel="alternate" href="/notes/atom.xml" title="Cerallin的笔记本" type="application/atom+xml"></head><body><div class="loading-wrapper" data-loading="data-loading"><div class="loading"><span></span><span></span><span></span></div></div><div class="page" data-filter="data-filter"><div class="head" data-show="data-show"><header class="head-header"><div class="head-author"><a class="head-author-link" href="/notes/">Cerallin<hl></hl>的笔记本</a></div><div class="head-right"><button class="bar-wrap" id="bar-wrap-toggle" title="菜单按钮"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><div class="head-item"><a class="search-button head-item-link"><span>搜索</span> <i class="icon icon-search"></i></a></div><div class="head-item"><a class="head-item-link" href="/notes/about">关于</a></div></div></header><div class="menubar-head" id="menubar"><ul class="menubar-ul"><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/">计算机与通信工程</a></li><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%B7%A5%E7%A8%8B/">材料科学与工程</a></li><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/">瞎折腾</a></li><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E6%B5%85%E6%80%9D/">浅思</a></li><li class="menubar-item" data-border="data-border"></li><li class="menubar-item"><i class="icon icon-archive"></i> <a class="menubar-link" href="/notes/archives">归档</a></li><li class="menubar-item"><i class="icon icon-tags"></i> <a class="menubar-link" href="/notes/tags">标签</a></li><li class="menubar-item" data-border="data-border"></li><li class="menubar-item"><a class="menubar-link" href="/notes/about"><span>关于</span></a></li></ul><div class="menu-search-box search-button"><div>搜索</div><i class="icon icon-search"></i></div></div></div><div class="main" data-page="post"><article class="post" id="post"><header class="post-head"><h1 class="post-title"><a class="title" href="/notes/2022/01/01/%E7%AC%A6%E5%8F%B7%E5%9B%9E%E5%BD%92%E4%B8%8E%E7%94%BB%E5%9B%BE/">符号回归与画图<hl></hl></a></h1></header><div class="post-meta"><div class="post-date"><time class="post-time" itemprop="datePublished" title="2022-01-01 16:09:15" datetime="2022-01-01T08:09:15.000Z">2022-01-01</time></div>|<div class="post-tag"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><hl></hl>机器学习</a></li></ul></div><div class="post-visit"><span id="page_pv">?</span><hl></hl>访问</div></div><div class="post-info"><div class="post-word-count">本文共<hl></hl>389<hl></hl>字。</div><div class="post-cc">版权声明：署名 | <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a></div></div><div class="article-entry" itemprop="articleBody"><blockquote><p>符号回归得到的公式形式往往复杂。为了使结果更加直观，可以用树状图表示。</p></blockquote><span id="more"></span><h3 id="gplearn">gplearn</h3><p>本文所用到的符号回归<hl></hl>Python<hl></hl>库是<hl></hl><code>gplearn</code>，官方文档<a target="_blank" rel="noopener" href="https://gplearn.readthedocs.io/en/stable/intro.html">在这里</a>，程序例子<a target="_blank" rel="noopener" href="https://gplearn.readthedocs.io/en/stable/examples.html">在这里</a>。</p><figure id="fig:tree-view"><img loading="lazy" src="/notes/images/ex1_child.png" alt="图1: Tree view of the solution"><figcaption aria-hidden="true">图<hl></hl>1: Tree view of the solution</figcaption></figure><p><code>gplearn</code><hl></hl>生成的公式，比如</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sub(add(-0.999, X1), mul(sub(X1, X0), add(X0, X1)))</span><br></pre></td></tr></tbody></table></figure><p>可以转变为如<a href="#fig:tree-view">图<hl></hl>1</a><hl></hl>所示的树状图。</p><h3 id="graphviz">Graphviz</h3><blockquote><p>Graphviz<hl></hl>是一款由<hl></hl>AT&amp;TResearch<hl></hl>和<hl></hl>LucentBell<hl></hl>实验室开源的可视化图形工具，可以很方便的用来绘制结构化的图形网络，支持多种格式输出。 Graphviz<hl></hl>输入是一个用<hl></hl>dot<hl></hl>语言编写的绘图脚本，通过对输入脚本的解析，分析出其中的点、边及子图，然后根据属性进行绘制。 Graphviz layout<hl></hl>以简单的文本语言描述图形，并以实用的格式制作图表，如用于网页的<hl></hl>images<hl></hl>和<hl></hl>SVG；用于放入在其它文件中或显示在交互式图形浏览器中的<hl></hl>PDF<hl></hl>和<hl></hl>Postscript。</p></blockquote><p>首先需要先下载<hl></hl>Graphviz<hl></hl>软件。根据<hl></hl><a target="_blank" rel="noopener" href="http://graphviz.org/download/">Graphviz<hl></hl>官网</a>， Ubuntu<hl></hl>等系统可以包管理工具通过指令安装：</p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install graphviz</span><br></pre></td></tr></tbody></table></figure><p>Windows 10<hl></hl>则选择最新的<hl></hl>64<hl></hl>位安装包： <a target="_blank" rel="noopener" href="https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/2.50.0/windows_10_cmake_Release_graphviz-install-2.50.0-win64.exe">graphviz 2.50.0 win64.exe</a>。</p><p>然后安装<hl></hl>Graphviz<hl></hl>的<hl></hl>Python<hl></hl>库：</p><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install graphviz</span><br></pre></td></tr></tbody></table></figure><p>或者</p><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install graphviz</span><br></pre></td></tr></tbody></table></figure><h3 id="python画图">Python<hl></hl>画图</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ... gplearn imports ...</span></span><br><span class="line"><span class="keyword">import</span> graphviz</span><br><span class="line"></span><br><span class="line"><span class="comment"># ... gplearn 程序 ...</span></span><br><span class="line"></span><br><span class="line">dot_data = est._program.export_graphviz()</span><br><span class="line">graph = graphviz.Source(dot_data)</span><br><span class="line">graph.view(filename=<span class="string">"my_picture"</span>, directory=<span class="string">"."</span>)</span><br></pre></td></tr></tbody></table></figure><p>参考官网给出的例子，使用上述代码可以在当前文件夹生成如<a href="#fig:tree-view">图<hl></hl>1</a><hl></hl>所示的树状图，文件名为<hl></hl><code>my_picture.pdf</code>。</p><p><span class="display-block text-indent-none mt-4 mb-2 fw-600">Fin.</span></p></div></article><aside class="post-widget"><h4>目录<hl></hl></h4><nav class="post-toc-wrap" id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#gplearn"><span class="post-toc-number">1.</span> <span class="post-toc-text">gplearn</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#graphviz"><span class="post-toc-number">2.</span> <span class="post-toc-text">Graphviz</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#python%E7%94%BB%E5%9B%BE"><span class="post-toc-number">3.</span> <span class="post-toc-text">Python<hl></hl>画图<hl></hl></span></a></li></ol></nav></aside></div><footer class="footer-nav"><div class="footer"><div class="back-top" id="back-top" title="Back to top"><i class="icon icon-chevron-bar-up"></i></div><div class="footer-content"><div class="footer-links"><div class="footer-links-column"><p><a title="Google Scholar" target="_blank" rel="noopener" href="https://scholar.google.com/">Google Scholar</a></p><p><a title="Google patents" target="_blank" rel="noopener" href="https://patents.google.com/">Google patents</a></p><p><a title="Bing Academic" target="_blank" rel="noopener" href="https://bing.com/academic/">Bing Academic</a></p></div><div class="footer-links-column"><p><a title="Web of Science" target="_blank" rel="noopener" href="https://www.webofscience.com/">Web of Science</a></p><p><a title="Science Direct" target="_blank" rel="noopener" href="https://www.sciencedirect.com/">Science Direct</a></p><p><a title="中国知网" target="_blank" rel="noopener" href="https://www.cnki.net/"><hl></hl>中国知网<hl></hl></a></p></div><div class="footer-links-column"><p><a title="arXiv" target="_blank" rel="noopener" href="https://arxiv.org/">arXiv</a></p><p><a title="JSTOR" target="_blank" rel="noopener" href="https://www.jstor.org/">JSTOR</a></p><p><a title="PubMed Central" target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/">PubMed Central</a></p></div><div class="footer-links-column"><p><a title="MSI Eureka" target="_blank" rel="noopener" href="https://search.msi-eureka.com/search">MSI Eureka</a></p><p><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/cerallin/">GitHub</a></p><p><a title="KUKE音乐" target="_blank" rel="noopener" href="https://www.kuke.com/">KUKE<hl></hl>音乐</a></p></div></div><div><span id="site_pv">?</span> PV <span id="site_uv">?</span> UV</div>Copyright © 2021<span class="time-divide">-</span>2026 Cerallin. Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a> and <a href="https://github.com/Cerallin/hexo-theme-yuzu" target="_blank" rel="external nofollow" title="v3.2.7">Theme Yuzu</a>.</div></div></footer><script>window.config={url_root:"/notes/",meta_path:"meta.json"}</script><script src="/notes/js/theme/back-to-top.js"></script><script src="/notes/js/theme/clipboard.js"></script><script src="/notes/js/theme/loading.js"></script><script src="/notes/js/theme/navbar.js"></script><script src="/notes/js/theme/search.js"></script><script src="/notes/js/theme/toc.js"></script><script src="/notes/js/theme/refs-sidebar.js"></script><script>window.onload=function(){for(var e in Theme)Theme[e].register()}</script></div><div class="search-modal" id="search-modal"><div class="card"><div class="card-head"><div class="search-box"><input class="search-input" id="search-input" placeholder="搜索"><div class="search-button" id="search-button"><div class="icon icon-search"></div></div></div><div class="close-button"><div class="icon icon-x"></div></div></div><div class="card-body"><div class="search-count">共<hl></hl><span id="search-count-num">0</span><hl></hl>条搜索结果。</div><div class="search-result" id="search-result"></div></div></div></div></body></html>

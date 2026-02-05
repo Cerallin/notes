@@ -1,0 +1,131 @@
+<html lang="zh"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="这篇文章介绍了真白萌论坛由于庞大的日志量需要通过logrotate工具管理日志文件，实现按天分割、保留14天日志以及节约硬盘空间的问题。文章描述了logrotate工具的功能、运行机制和配置路径，强调其在大多数Linux发行版中的默认支持。最后提供了一个实例配置文件并说明如何启用和强制运行logrotate。"><title>使用logrotate自动分割nginx日志 - Cerallin的笔记本 - 瞎折腾～～</title><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="/notes/css/style.css"><link rel="stylesheet" href="/notes/css/helpers.css"><script src="/notes/js/clipboard/clipboard.min.js"></script><script src="/notes/js/bootstrap.js"></script><script>Theme.counter={register:function(){request("//visitor-counter.cerallin.top/count.php/?page="+encodeURI(window.location.href),{method:"GET"}).then(e=>{for(var t in e){var n=document.getElementById(t);n&&(n.innerText=e[t])}}).catch(e=>{console.error("Fetching visit count failed.",e)})}}</script><style>body hl:after {
+    content: ' ';
+    display: inline;
+    font-family: inherit;
+    font-size: 0.45em;
+}
+
+html code hl,
+html pre hl,
+html kbd hl,
+html samp hl,
+html ruby hl,
+html .tag-list-item hl {
+    display: none;
+}
+
+html ol > hl,
+html ul > hl {
+    display: none;
+}</style><meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}</style><link rel="alternate" href="/notes/atom.xml" title="Cerallin的笔记本" type="application/atom+xml"></head><body><div class="loading-wrapper" data-loading="data-loading"><div class="loading"><span></span><span></span><span></span></div></div><div class="page" data-filter="data-filter"><div class="head" data-show="data-show"><header class="head-header"><div class="head-author"><a class="head-author-link" href="/notes/">Cerallin<hl></hl>的笔记本</a></div><div class="head-right"><button class="bar-wrap" id="bar-wrap-toggle" title="菜单按钮"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><div class="head-item"><a class="search-button head-item-link"><span>搜索</span> <i class="icon icon-search"></i></a></div><div class="head-item"><a class="head-item-link" href="/notes/about">关于</a></div></div></header><div class="menubar-head" id="menubar"><ul class="menubar-ul"><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/">计算机与通信工程</a></li><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%B7%A5%E7%A8%8B/">材料科学与工程</a></li><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/">瞎折腾</a></li><li class="menubar-item"><i class="icon icon-chevron-right"></i> <a class="menubar-link" href="/notes/categories/%E6%B5%85%E6%80%9D/">浅思</a></li><li class="menubar-item" data-border="data-border"></li><li class="menubar-item"><i class="icon icon-archive"></i> <a class="menubar-link" href="/notes/archives">归档</a></li><li class="menubar-item"><i class="icon icon-tags"></i> <a class="menubar-link" href="/notes/tags">标签</a></li><li class="menubar-item" data-border="data-border"></li><li class="menubar-item"><a class="menubar-link" href="/notes/about"><span>关于</span></a></li></ul><div class="menu-search-box search-button"><div>搜索</div><i class="icon icon-search"></i></div></div></div><div class="main" data-page="post"><article class="post" id="post"><header class="post-head"><h1 class="post-title"><a class="title" href="/notes/2022/01/01/%E4%BD%BF%E7%94%A8logrotate%E8%87%AA%E5%8A%A8%E5%88%86%E5%89%B2nginx%E6%97%A5%E5%BF%97/">使用<hl></hl>logrotate<hl></hl>自动分割<hl></hl>nginx<hl></hl>日志<hl></hl></a></h1></header><div class="post-meta"><div class="post-date"><time class="post-time" itemprop="datePublished" title="2022-01-01 13:32:33" datetime="2022-01-01T05:32:33.000Z">2022-01-01</time></div>|<div class="post-tag"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/Nginx/" rel="tag">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/%E5%8E%8B%E7%BC%A9%E5%8C%85/" rel="tag"><hl></hl>压缩包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li></ul></div><div class="post-visit"><span id="page_pv">?</span><hl></hl>访问</div></div><div class="post-info"><div class="post-word-count">本文共<hl></hl>570<hl></hl>字。</div><div class="post-cc">版权声明：署名 | <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a></div></div><div class="article-entry" itemprop="articleBody"><blockquote><p>某真〇萌论坛的日志量及其庞大，从<hl></hl>8<hl></hl>月到现在的<hl></hl>Nginx<hl></hl>日志竟有<hl></hl>44G。查阅资料，发现大多数<hl></hl>Linux<hl></hl>发行版默认使用<hl></hl>logrotate<hl></hl>对各种日志进行分割，且能满足我的需求。</p></blockquote><span id="more"></span><h3 id="需求分析">需求分析</h3><p>真〇萌论坛的日志量很大，为了节约服务器硬盘空间，有必要定期删除陈旧的日志文件。核心需求有两个：</p><ol type="1"><li>保留<hl></hl>14<hl></hl>天以内的日志。</li><li>将日志按天分割到不同的文件里。</li></ol><h3 id="一种可行的解决方案">一种可行的解决方案</h3><p>查阅资料，发现大多数<hl></hl>Linux<hl></hl>发行版默认使用<hl></hl>logrotate<hl></hl>对各种日志进行分割，且能满足我的需求。</p><blockquote><p>logrotate<hl></hl>是一个<hl></hl>linux<hl></hl>系统日志的管理工具。可以对单个日志文件或者某个目录下的文件按时间<hl></hl>/<hl></hl>大小进行切割，压缩操作；指定日志保存数量；还可以在切割之后运行自定义命令。 logrotate<hl></hl>是基于<hl></hl>crontab<hl></hl>运行的，所以这个时间点是由<hl></hl>crontab<hl></hl>控制的，具体可以查询<hl></hl>crontab<hl></hl>的配置文件<hl></hl>/etc/anacrontab。系统会按照计划的频率运行<hl></hl>logrotate，通常是每天。在大多数的<hl></hl>Linux<hl></hl>发行版本上，计划每天运行的脚本位于<hl></hl>/etc/cron.daily/logrotate。主流<hl></hl>Linux<hl></hl>发行版上都默认安装有<hl></hl>logrotate<hl></hl>包，如果你的<hl></hl>linux<hl></hl>系统中找不到<hl></hl>logrotate，可以使用<hl></hl>apt-get<hl></hl>或<hl></hl>yum<hl></hl>命令来安装。</p></blockquote><p>设置<hl></hl>logrotate<hl></hl>的配置文件<hl></hl><code>/etc/logrotate.d/nginx</code><hl></hl>内容如下：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/www/wwwlogs/www.masiro.me.log {</span><br><span class="line">    daily</span><br><span class="line">    rotate 14</span><br><span class="line">    missingok</span><br><span class="line">    notifempty</span><br><span class="line">    compress</span><br><span class="line">    nodelaycompress</span><br><span class="line">    copytruncate</span><br><span class="line">    dateext</span><br><span class="line">    dateformat -%Y-%m-%d</span><br><span class="line">    dateyesterday</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>其中各项的含义如<a href="#tbl:logrotate-explanation">表<hl></hl>1</a><hl></hl>所示。<p></p><table id="tbl:logrotate-explanation"><caption>表<hl></hl>1: logrotate<hl></hl>选项含义表</caption><thead><tr><th style="text-align: left;">项</th><th style="text-align: left;">含义</th></tr></thead><tbody><tr><td style="text-align: left;">daily</td><td style="text-align: left;">按天切割</td></tr><tr><td style="text-align: left;">rotate</td><td style="text-align: left;">保留<hl></hl>14<hl></hl>个日志文件</td></tr><tr><td style="text-align: left;">missingok</td><td style="text-align: left;">切割中遇到日志错误忽略</td></tr><tr><td style="text-align: left;">notifempty</td><td style="text-align: left;">日志如果为空将不进行切割和压缩</td></tr><tr><td style="text-align: left;">compress</td><td style="text-align: left;">以<hl></hl>gzip<hl></hl>方式压缩</td></tr><tr><td style="text-align: left;">nodelaycompress</td><td style="text-align: left;">不要将刚切割后的日志文件放到下个循环中进行压缩</td></tr><tr><td style="text-align: left;">copytruncate</td><td style="text-align: left;">复制源日志文件后并清空源日志文件</td></tr><tr><td style="text-align: left;">dateext</td><td style="text-align: left;">切割后的文件添加日志扩展名</td></tr><tr><td style="text-align: left;">dateformat</td><td style="text-align: left;">扩展方式为 -%Y-%m-%d</td></tr><tr><td style="text-align: left;">dateyesterday</td><td style="text-align: left;">切割后的文件日志命名为昨天的日期</td></tr></tbody></table><h3 id="启用logrotate的自动任务">启用<hl></hl>logrotate<hl></hl>的自动任务</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logrotate /etc/logrotate.d/nginx</span><br></pre></td></tr></tbody></table></figure><h3 id="强制当场运行logrotate">强制当场运行<hl></hl>logrotate</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logrotate -vf /etc/logrotate.d/nginx</span><br></pre></td></tr></tbody></table></figure><p><span class="display-block text-indent-none mt-4 mb-2 fw-600">Fin.</span></p></div></article><aside class="post-widget"><h4>目录<hl></hl></h4><nav class="post-toc-wrap" id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="post-toc-number">1.</span> <span class="post-toc-text">需求分析<hl></hl></span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E7%A7%8D%E5%8F%AF%E8%A1%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="post-toc-number">2.</span> <span class="post-toc-text">一种可行的解决方案<hl></hl></span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%AF%E7%94%A8logrotate%E7%9A%84%E8%87%AA%E5%8A%A8%E4%BB%BB%E5%8A%A1"><span class="post-toc-number">3.</span> <span class="post-toc-text">启用<hl></hl>logrotate<hl></hl>的自动任务<hl></hl></span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BC%BA%E5%88%B6%E5%BD%93%E5%9C%BA%E8%BF%90%E8%A1%8Clogrotate"><span class="post-toc-number">4.</span> <span class="post-toc-text">强制当场运行<hl></hl>logrotate</span></a></li></ol></nav></aside></div><footer class="footer-nav"><div class="footer"><div class="back-top" id="back-top" title="Back to top"><i class="icon icon-chevron-bar-up"></i></div><div class="footer-content"><div class="footer-links"><div class="footer-links-column"><p><a title="Google Scholar" target="_blank" rel="noopener" href="https://scholar.google.com/">Google Scholar</a></p><p><a title="Google patents" target="_blank" rel="noopener" href="https://patents.google.com/">Google patents</a></p><p><a title="Bing Academic" target="_blank" rel="noopener" href="https://bing.com/academic/">Bing Academic</a></p></div><div class="footer-links-column"><p><a title="Web of Science" target="_blank" rel="noopener" href="https://www.webofscience.com/">Web of Science</a></p><p><a title="Science Direct" target="_blank" rel="noopener" href="https://www.sciencedirect.com/">Science Direct</a></p><p><a title="中国知网" target="_blank" rel="noopener" href="https://www.cnki.net/"><hl></hl>中国知网<hl></hl></a></p></div><div class="footer-links-column"><p><a title="arXiv" target="_blank" rel="noopener" href="https://arxiv.org/">arXiv</a></p><p><a title="JSTOR" target="_blank" rel="noopener" href="https://www.jstor.org/">JSTOR</a></p><p><a title="PubMed Central" target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/">PubMed Central</a></p></div><div class="footer-links-column"><p><a title="MSI Eureka" target="_blank" rel="noopener" href="https://search.msi-eureka.com/search">MSI Eureka</a></p><p><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/cerallin/">GitHub</a></p><p><a title="KUKE音乐" target="_blank" rel="noopener" href="https://www.kuke.com/">KUKE<hl></hl>音乐</a></p></div></div><div><span id="site_pv">?</span> PV <span id="site_uv">?</span> UV</div>Copyright © 2021<span class="time-divide">-</span>2026 Cerallin. Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a> and <a href="https://github.com/Cerallin/hexo-theme-yuzu" target="_blank" rel="external nofollow" title="v3.2.7">Theme Yuzu</a>.</div></div></footer><script>window.config={url_root:"/notes/",meta_path:"meta.json"}</script><script src="/notes/js/theme/back-to-top.js"></script><script src="/notes/js/theme/clipboard.js"></script><script src="/notes/js/theme/loading.js"></script><script src="/notes/js/theme/navbar.js"></script><script src="/notes/js/theme/search.js"></script><script src="/notes/js/theme/toc.js"></script><script src="/notes/js/theme/refs-sidebar.js"></script><script>window.onload=function(){for(var e in Theme)Theme[e].register()}</script></div><div class="search-modal" id="search-modal"><div class="card"><div class="card-head"><div class="search-box"><input class="search-input" id="search-input" placeholder="搜索"><div class="search-button" id="search-button"><div class="icon icon-search"></div></div></div><div class="close-button"><div class="icon icon-x"></div></div></div><div class="card-body"><div class="search-count">共<hl></hl><span id="search-count-num">0</span><hl></hl>条搜索结果。</div><div class="search-result" id="search-result"></div></div></div></div></body></html>
