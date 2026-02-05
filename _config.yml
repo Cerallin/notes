@@ -86,17 +86,23 @@ show_count: false
 beian:
   enable: false
 
+# hexo-renderer-pandoc 0.5.0
 pandoc:
-  pandoc_path: /opt/dependencies/pandoc
-  extra:
-    - filter: pandoc-crossref
-    # - csl: "GB7714.csl"
-    # - csl: "elsevier-with-titles.csl"
-    - csl: ieee.csl
-    - citeproc: # Just leave it here
-  meta:
-    - link-citations: true
-    - crossrefYaml: _crossref.yml
+  pandocPath: /opt/dependencies/pandoc
+  timeout: 1000
+  args:
+    - --filter
+    - pandoc-crossref
+    - --csl
+    # - GB7714.csl
+    # - elsevier-with-titles.csl
+    - ieee.csl
+    - --citeproc
+    - -M
+    - link-citations=true
+    - -M
+    - crossrefYaml=_crossref.yml
+    - --mathjax
 
 fix_cjk_spacing: true
 
