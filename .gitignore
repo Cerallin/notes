@@ -1,20 +1,10 @@
+# editor settings
 .vscode
-db.json
-*.log
+
+# nodejs
 node_modules/
-public/
-./*.bib
-id_rsa
-source/_posts/*.md
-.source_me
+
+# hexo
 .deploy_git/
-.ghc*
-pandoc-filters/*
-!pandoc-filters/*.hs
-!pandoc-filters/handleRuby
-
-source/downloads/code/c-examples/**
-
-!source/downloads/code/c-examples/*
-!source/downloads/code/c-examples/*/*.c
-!source/downloads/code/c-examples/*/*.h
+public/
+db.json
