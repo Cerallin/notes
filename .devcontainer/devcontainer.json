@@ -7,11 +7,10 @@
             "extensions": [
                 "ms-vscode.cpptools",
                 "streetsidesoftware.code-spell-checker",
+                "Gruntfuggly.todo-tree",
                 "yzhang.markdown-all-in-one",
                 "eamodio.gitlens",
-                "sysoev.language-stylus",
-                "Wscats.eno",
-                "haskell.haskell"
+                "sysoev.language-stylus"
             ]
         }
     },
