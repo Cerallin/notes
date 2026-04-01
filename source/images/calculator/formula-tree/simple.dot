@@ -1,0 +1,148 @@
+digraph AST {
+
+    graph [
+        ordering=out
+        splines=line
+        ranksep=0.6
+        nodesep=0.35
+        fontname="Arial"
+    ];
+
+    node [
+        shape=circle
+        style=filled
+        fontname="Arial"
+        width=0.5
+    ];
+
+    edge [
+        arrowsize=0.7
+    ];
+
+    // ==================== 简单公式 ====================
+
+    subgraph cluster_simple {
+        label=<<b>a</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        s_root [label=""];
+
+        // operator
+        node [fillcolor="#4cdee0"];
+        s_plus [label="+"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        s_n1 [label="1"];
+        s_n2 [label="2"];
+
+        // 结构
+        s_root -> s_plus;
+
+        s_plus -> s_n1;
+        s_plus -> s_n2;
+
+        // 隐藏节点（补齐层数，对齐 label）
+        node [style=invis];
+        s_pad1 [label=""];
+        s_pad2 [label=""];
+        s_n1 -> s_pad1 [style=invis];
+        s_n2 -> s_pad2 [style=invis];
+
+        // rank 控制层级
+        {rank=same; s_n1; s_n2}
+        {rank=same; s_pad1; s_pad2}
+
+        // 顺序锁定
+        s_n1 -> s_n2 [style=invis];
+        s_pad1 -> s_pad2 [style=invis];
+    }
+
+    // ==================== 左结合 ====================
+
+    subgraph cluster_left {
+        label=<<b>b</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        l_root [label=""];
+
+        // operator
+        node [fillcolor="#4cdee0"];
+        l_min [label="-"];
+        l_plus [label="+"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        l_n1 [label="1"];
+        l_n2 [label="2"];
+        l_n3 [label="3"];
+
+        // 结构
+        l_root -> l_min;
+
+        l_min -> l_plus;
+        l_min -> l_n3;
+
+        l_plus -> l_n1;
+        l_plus -> l_n2;
+
+        // rank 控制层级
+        {rank=same; l_min}
+        {rank=same; l_plus; l_n3}
+        {rank=same; l_n1; l_n2}
+
+        // 顺序锁定
+        l_plus -> l_n3 [style=invis];
+        l_n1 -> l_n2 [style=invis];
+    }
+
+    // ==================== 右结合 ====================
+
+    subgraph cluster_right {
+        label=<<b>c</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        r_root [label=""];
+
+        // operator
+        node [fillcolor="#4cdee0"];
+        r_plus [label="+"];
+        r_min [label="-"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        r_n1 [label="1"];
+        r_n2 [label="2"];
+        r_n3 [label="3"];
+
+        // 结构
+        r_root -> r_plus;
+
+        r_plus -> r_n1;
+        r_plus -> r_min;
+
+        r_min -> r_n2;
+        r_min -> r_n3;
+
+        // rank 控制层级
+        {rank=same; r_plus}
+        {rank=same; r_n1; r_min}
+        {rank=same; r_n2; r_n3}
+
+        // 顺序锁定
+        r_n1 -> r_min [style=invis];
+        r_n2 -> r_n3 [style=invis];
+    }
+}

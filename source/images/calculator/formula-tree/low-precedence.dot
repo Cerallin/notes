@@ -1,0 +1,124 @@
+digraph AST {
+
+    graph [
+        ordering=out
+        splines=line
+        ranksep=0.6
+        nodesep=0.35
+        fontname="Arial"
+    ];
+
+    node [
+        shape=circle
+        style=filled
+        fontname="Arial"
+        width=0.5
+    ];
+
+    edge [
+        arrowsize=0.7
+    ];
+
+    // ==================== Before: = 1 + 2 * 3 ====================
+
+    subgraph cluster_before {
+        label=<<b>a</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        b_root [label="="];
+
+        // operators
+        node [fillcolor="#4cdee0"];
+        b_plus [label="+"];
+        b_mul [label="×"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        b_n1 [label="1"];
+        b_n2 [label="2"];
+        b_n3 [label="3"];
+
+        // 结构
+        b_root -> b_plus;
+
+        b_plus -> b_n1;
+        b_plus -> b_mul;
+
+        b_mul -> b_n2;
+        b_mul -> b_n3;
+
+        // 隐藏节点（补齐层数，对齐 label）
+        node [style=invis];
+        b_pad1 [label=""];
+        b_pad2 [label=""];
+        b_n2 -> b_pad1 [style=invis];
+        b_n3 -> b_pad2 [style=invis];
+
+        // rank 控制
+        {rank=same; b_plus}
+        {rank=same; b_n1; b_mul}
+        {rank=same; b_n2; b_n3}
+        {rank=same; b_pad1; b_pad2}
+
+        // 顺序锁定
+        b_n1 -> b_mul [style=invis];
+        b_n2 -> b_n3 [style=invis];
+        b_pad1 -> b_pad2 [style=invis];
+    }
+
+    // ==================== After: = (1 + 2 * 3) - ====================
+
+    subgraph cluster_after {
+        label=<<b>b</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        a_root [label="="];
+
+        // operators
+        node [fillcolor="#4cdee0"];
+        a_minus [label="−"];
+        a_plus [label="+"];
+        a_mul [label="×"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        a_n1 [label="1"];
+        a_n2 [label="2"];
+        a_n3 [label="3"];
+
+        // 虚拟节点
+        node [style=invis];
+        a_pad [label=""];
+
+        // 结构
+        a_root -> a_minus;
+
+        a_minus -> a_plus;
+        a_minus -> a_pad [style=invis];
+
+        a_plus -> a_n1;
+        a_plus -> a_mul;
+
+        a_mul -> a_n2;
+        a_mul -> a_n3;
+
+        // rank 控制
+        {rank=same; a_minus}
+        {rank=same; a_plus; a_pad}
+        {rank=same; a_n1; a_mul}
+        {rank=same; a_n2; a_n3}
+
+        // 顺序锁定
+        a_plus -> a_pad [style=invis];
+        a_n1 -> a_mul [style=invis];
+        a_n2 -> a_n3 [style=invis];
+    }
+}

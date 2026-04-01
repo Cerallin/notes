@@ -1,0 +1,242 @@
+digraph AST {
+
+    graph [
+        ordering=out
+        splines=line
+        ranksep=0.6
+        nodesep=0.35
+        fontname="Arial"
+    ];
+
+    node [
+        shape=circle
+        style=filled
+        fontname="Arial"
+        width=0.5
+    ];
+
+    edge [
+        arrowsize=0.7
+    ];
+
+    // ==================== Step 1: = 1 ====================
+
+    subgraph cluster_step1 {
+        label=<<b>a</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        s1_root [label="="];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        s1_n1 [label="1"];
+
+        // 虚拟右子节点
+        node [style=invis];
+        s1_pad [label=""];
+
+        // 结构
+        s1_root -> s1_n1;
+        s1_root -> s1_pad [style=invis];
+
+        // 隐藏节点（补齐层数，对齐 label）
+        node [style=invis];
+        s1_pad2 [label=""];
+        s1_pad3 [label=""];
+        s1_pad4 [label=""];
+        s1_pad5 [label=""];
+        s1_n1 -> s1_pad2 [style=invis];
+        s1_pad -> s1_pad3 [style=invis];
+        s1_pad2 -> s1_pad4 [style=invis];
+        s1_pad3 -> s1_pad5 [style=invis];
+
+        // rank 控制
+        {rank=same; s1_n1; s1_pad}
+        {rank=same; s1_pad2; s1_pad3}
+        {rank=same; s1_pad4; s1_pad5}
+
+        // 顺序锁定
+        s1_n1 -> s1_pad [style=invis];
+        s1_pad2 -> s1_pad3 [style=invis];
+        s1_pad4 -> s1_pad5 [style=invis];
+    }
+
+    // ==================== Step 2: = 1 + ====================
+
+    subgraph cluster_step2 {
+        label=<<b>b</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        s2_root [label="="];
+
+        // operator
+        node [fillcolor="#4cdee0"];
+        s2_plus [label="+"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        s2_n1 [label="1"];
+
+        // 虚拟节点
+        node [style=invis];
+        s2_pad [label=""];
+
+        // 结构
+        s2_root -> s2_plus;
+        s2_plus -> s2_n1;
+        s2_plus -> s2_pad [style=invis];
+
+        // 隐藏节点（补齐层数，对齐 label）
+        node [style=invis];
+        s2_pad2 [label=""];
+        s2_pad3 [label=""];
+        s2_n1 -> s2_pad2 [style=invis];
+        s2_pad -> s2_pad3 [style=invis];
+
+        // rank 控制
+        {rank=same; s2_plus}
+        {rank=same; s2_n1; s2_pad}
+        {rank=same; s2_pad2; s2_pad3}
+
+        // 顺序锁定
+        s2_n1 -> s2_pad [style=invis];
+        s2_pad2 -> s2_pad3 [style=invis];
+    }
+
+    // ==================== Step 3: = 1 + 2 ====================
+
+    subgraph cluster_step3 {
+        label=<<b>c</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        s3_root [label="="];
+
+        // operator
+        node [fillcolor="#4cdee0"];
+        s3_plus [label="+"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        s3_n1 [label="1"];
+        s3_n2 [label="2"];
+
+        // 结构
+        s3_root -> s3_plus;
+        s3_plus -> s3_n1;
+        s3_plus -> s3_n2;
+
+        // 隐藏节点（补齐层数，对齐 label）
+        node [style=invis];
+        s3_pad1 [label=""];
+        s3_pad2 [label=""];
+        s3_n1 -> s3_pad1 [style=invis];
+        s3_n2 -> s3_pad2 [style=invis];
+
+        // rank 控制
+        {rank=same; s3_n1; s3_n2}
+        {rank=same; s3_pad1; s3_pad2}
+
+        // 顺序锁定
+        s3_n1 -> s3_n2 [style=invis];
+        s3_pad1 -> s3_pad2 [style=invis];
+    }
+
+    // ==================== Step 4: = 1 + 2 * ====================
+
+    subgraph cluster_step4 {
+        label=<<b>d</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        s4_root [label="="];
+
+        // operators
+        node [fillcolor="#4cdee0"];
+        s4_plus [label="+"];
+        s4_mul [label="×"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        s4_n1 [label="1"];
+        s4_n2 [label="2"];
+
+        // 虚拟节点
+        node [style=invis];
+        s4_pad [label=""];
+
+        // 结构
+        s4_root -> s4_plus;
+
+        s4_plus -> s4_n1;
+        s4_plus -> s4_mul;
+
+        s4_mul -> s4_n2;
+        s4_mul -> s4_pad [style=invis];
+
+        // rank 控制
+        {rank=same; s4_plus}
+        {rank=same; s4_n1; s4_mul}
+        {rank=same; s4_n2; s4_pad}
+
+        // 顺序锁定
+        s4_n1 -> s4_mul [style=invis];
+        s4_n2 -> s4_pad [style=invis];
+    }
+
+    // ==================== Step 5: = 1 + 2 * 3 ====================
+
+    subgraph cluster_step5 {
+        label=<<b>e</b>>;
+        labelloc=b;
+        color=transparent;
+        margin=50;
+
+        // root
+        node [fillcolor="#484838"];
+        s5_root [label="="];
+
+        // operators
+        node [fillcolor="#4cdee0"];
+        s5_plus [label="+"];
+        s5_mul [label="×"];
+
+        // literals
+        node [fillcolor="#E9EB9E"];
+        s5_n1 [label="1"];
+        s5_n2 [label="2"];
+        s5_n3 [label="3"];
+
+        // 结构
+        s5_root -> s5_plus;
+
+        s5_plus -> s5_n1;
+        s5_plus -> s5_mul;
+
+        s5_mul -> s5_n2;
+        s5_mul -> s5_n3;
+
+        // rank 控制
+        {rank=same; s5_plus}
+        {rank=same; s5_n1; s5_mul}
+        {rank=same; s5_n2; s5_n3}
+
+        // 顺序锁定
+        s5_n1 -> s5_mul [style=invis];
+        s5_n2 -> s5_n3 [style=invis];
+    }
+}
