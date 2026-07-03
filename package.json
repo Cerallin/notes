@@ -19,7 +19,7 @@
     "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-filter-fix-cjk-spacing": "0.0.5",
-    "hexo-filter-mathjax": "^0.9.1",
+    "hexo-filter-mathjax": "^0.11.0",
     "hexo-filter-text-autospace": "^2.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.9",
